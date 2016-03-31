@@ -16,7 +16,7 @@ if len(sys.argv) == 1:
 for filename in sys.argv[1:]:
     targetfilename = filename.replace('.tsv','') + '.folia.xml'
     doc = folia.Document(id=os.path.basename(filename.replace('.tsv','')))
-    doc.declare(folia.Entity, "http://github.com/proycon/parseme-support/parseme-mwe.foliaset.xml")
+    doc.declare(folia.Entity, "https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml")
     text = doc.append(folia.Text)
     sentence = text.append(folia.Sentence)
     with open(filename,'r',encoding='utf-8') as f:
