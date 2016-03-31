@@ -27,7 +27,7 @@ for filename in sys.argv[1:]:
                 sentence.append(folia.Word, text=fields[1],space=space)
             elif len(sentence) > 0: #empty and we have a sentence to add
                 text.append(sentence)
-                sentence = folia.Sentence(doc)
+                sentence = folia.Sentence(doc, generate_id_in=text)
     if sentence.count(folia.Word) > 0: #don't forget the very last one
         text.append(sentence)
     doc.save(targetfilename)
