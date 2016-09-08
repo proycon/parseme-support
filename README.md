@@ -16,5 +16,7 @@ Usage
 --------
 
 - Run the script as follows, from the directory where you cloned this
-  repository: ``python3 tsv2folia.py [tsvfile] [[tsvfile]]`` 
+  repository: ``python3 tsv2folia.py /path/to/your/file.tsv`` (multiple file arguments allowed) 
+- The output will be a similarly named file, but with extension ``folia.xml``.
+  This can be uploaded to FLAT.
 
