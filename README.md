@@ -9,8 +9,8 @@ Installation
     - For Debian/Ubuntu Linux: ``sudo apt-get install python3 python3-pip``.
     - Windows/Mac users can use the Anaconda distribution: https://www.continuum.io/downloads
 - Install dependency *pynlpl*: 
-    - ``sudo pip3 install pynlpl`` (if you want to install it globally on Debian/Ubuntu)
-    - ``pip install pynlpl`` (if you use Anaconda)
+    - For global installation on Debian/Ubuntu Linux: ``sudo pip3 install pynlpl``
+    - For Anaconda: ``pip install pynlpl``
 
 Usage 
 --------
