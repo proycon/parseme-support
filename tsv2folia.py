@@ -10,12 +10,20 @@ except ImportError:
 
 if len(sys.argv) == 1:
     print("Usage: tsv2folia.py [tsvfile] [[tsvfile]] ..etc..",file=sys.stderr)
+    print("Add parameter --rtl for right-to-left languages (arabic, hebrew, farsi, etc)!")
     sys.exit(2)
 
 
+rtl = False
+
 for filename in sys.argv[1:]:
+    if filename == '--rtl':
+        rtl = True
+        continue
     targetfilename = filename.replace('.tsv','') + '.folia.xml'
     doc = folia.Document(id=os.path.basename(filename.replace('.tsv','')))
+    if rtl:
+        doc.metadata['direction'] = 'rtl'
     doc.declare(folia.Entity, "https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml")
     text = doc.append(folia.Text)
     sentence = folia.Sentence(doc,generate_id_in=text)
