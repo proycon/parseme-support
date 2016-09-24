@@ -8,6 +8,7 @@ except ImportError:
     print("ERROR: PyNLPl not found, please install pynlpl (pip install pynlpl)",file=sys.stderr)
     sys.exit(2)
 
+
 def convert(filename, targetfilename, rtl, set_file):
     doc = folia.Document(id=os.path.basename(filename.replace('.tsv','')))
     if rtl:
@@ -27,6 +28,19 @@ def convert(filename, targetfilename, rtl, set_file):
     if sentence.count(folia.Word) > 0: #don't forget the very last one
         text.append(sentence)
     doc.save(targetfilename)
+
+def flat_convert(filename, targetfilename, *args, **kwargs):
+    """This function can be called directly by FLAT"""
+    if 'rtl' in kwargs and kwargs['rtl']:
+        rtl=True
+    else:
+        rtl = False
+    setdefinition = kwargs['flatconfiguration']['annotationfocusset']
+    try:
+        convert(filename, targetfilename, rtl, setdefinition)
+    except Exception as e:
+        return False, e.__class__.__name__ + ': ' + str(e)
+    return True
 
 def main():
     if len(sys.argv) == 1:
@@ -53,8 +67,8 @@ def main():
         if filename == '--rtl':
             rtl = True
             continue
-        elif filename.startswith('--set='):
-            option = filename[6:]
+        elif filename.startswith('--set=') or filename.startswith('--config='):
+            option = filename[filename.find('=')+1:]
             if option in set_options.keys():
                 set_file = set_options[option]
                 continue
