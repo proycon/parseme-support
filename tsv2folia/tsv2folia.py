@@ -8,43 +8,11 @@ except ImportError:
     print("ERROR: PyNLPl not found, please install pynlpl (pip install pynlpl)",file=sys.stderr)
     sys.exit(2)
 
-if len(sys.argv) == 1:
-    print("Usage: tsv2folia.py [tsvfile] [[tsvfile]] ..etc..",file=sys.stderr)
-    print("Add parameter --rtl for right-to-left languages (arabic, hebrew, farsi, etc)!")
-    print("Add parameter --config=parseme[-xx] for specifying a config file (e.g., --config=parseme-en)!")
-    sys.exit(2)
-
-rtl = False
-
-config_options = {
-    "parseme": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml",
-    "parseme-en": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-en.foliaset.xml",
-    "parseme-germanic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-germanic.foliaset.xml",
-    "parseme-it": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-it.foliaset.xml",
-    "parseme-lt": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-lt.foliaset.xml",
-    "parseme-other": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-other.foliaset.xml",
-    "parseme-romance": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-romance.foliaset.xml",
-    "parseme-slavic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-slavic.foliaset.xml",
-}
-
-for filename in sys.argv[1:]:
-    config_file = config_options["parseme"]
-    if filename == '--rtl':
-        rtl = True
-        continue
-    elif filename.startswith('--config='):
-        option = filename[9:]
-        if option in config_options.keys():
-            config_file = config_options[option]
-            continue
-        else:
-           print("Wrong config file '{}'".format(option))
-           sys.exit(2)        
-    targetfilename = filename.replace('.tsv','') + '.folia.xml'
+def convert(filename, targetfilename, rtl, set_file):
     doc = folia.Document(id=os.path.basename(filename.replace('.tsv','')))
     if rtl:
         doc.metadata['direction'] = 'rtl'
-    doc.declare(folia.Entity, config_file)
+    doc.declare(folia.Entity, set_file)
     text = doc.append(folia.Text)
     sentence = folia.Sentence(doc,generate_id_in=text)
     with open(filename,'r',encoding='utf-8') as f:
@@ -60,5 +28,41 @@ for filename in sys.argv[1:]:
         text.append(sentence)
     doc.save(targetfilename)
 
+def main():
+    if len(sys.argv) == 1:
+        print("Usage: tsv2folia.py [tsvfile] [[tsvfile]] ..etc..",file=sys.stderr)
+        print("Add parameter --rtl for right-to-left languages (arabic, hebrew, farsi, etc)!")
+        print("Add parameter --set=parseme[-xx] for specifying a set file (e.g., --set=parseme-en)!")
+        sys.exit(2)
 
+    rtl = False
 
+    set_options = {
+        "parseme": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml",
+        "parseme-en": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-en.foliaset.xml",
+        "parseme-germanic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-germanic.foliaset.xml",
+        "parseme-it": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-it.foliaset.xml",
+        "parseme-lt": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-lt.foliaset.xml",
+        "parseme-other": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-other.foliaset.xml",
+        "parseme-romance": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-romance.foliaset.xml",
+        "parseme-slavic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-slavic.foliaset.xml",
+    }
+
+    for filename in sys.argv[1:]:
+        set_file = set_options["parseme"]
+        if filename == '--rtl':
+            rtl = True
+            continue
+        elif filename.startswith('--set='):
+            option = filename[6:]
+            if option in set_options.keys():
+                set_file = set_options[option]
+                continue
+            else:
+                print("Wrong set file '{}'".format(option))
+            sys.exit(2)
+        targetfilename = filename.replace('.tsv','') + '.folia.xml'
+        convert(filename, targetfilename, rtl, set_file)
+
+if __name__ == '__main__':
+    main()
