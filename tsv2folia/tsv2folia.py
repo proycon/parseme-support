@@ -11,20 +11,40 @@ except ImportError:
 if len(sys.argv) == 1:
     print("Usage: tsv2folia.py [tsvfile] [[tsvfile]] ..etc..",file=sys.stderr)
     print("Add parameter --rtl for right-to-left languages (arabic, hebrew, farsi, etc)!")
+    print("Add parameter --config=parseme[-xx] for specifying a config file (e.g., --config=parseme-en)!")
     sys.exit(2)
-
 
 rtl = False
 
+config_options = {
+    "parseme": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml",
+    "parseme-en": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-en.foliaset.xml",
+    "parseme-germanic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-germanic.foliaset.xml",
+    "parseme-it": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-it.foliaset.xml",
+    "parseme-lt": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-lt.foliaset.xml",
+    "parseme-other": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-other.foliaset.xml",
+    "parseme-romance": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-romance.foliaset.xml",
+    "parseme-slavic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-slavic.foliaset.xml",
+}
+
 for filename in sys.argv[1:]:
+    config_file = config_options["parseme"]
     if filename == '--rtl':
         rtl = True
         continue
+    elif filename.startswith('--config='):
+        option = filename[9:]
+        if option in config_options.keys():
+            config_file = config_options[option]
+            continue
+        else:
+           print("Wrong config file '{}'".format(option))
+           sys.exit(2)        
     targetfilename = filename.replace('.tsv','') + '.folia.xml'
     doc = folia.Document(id=os.path.basename(filename.replace('.tsv','')))
     if rtl:
         doc.metadata['direction'] = 'rtl'
-    doc.declare(folia.Entity, "https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml")
+    doc.declare(folia.Entity, config_file)
     text = doc.append(folia.Text)
     sentence = folia.Sentence(doc,generate_id_in=text)
     with open(filename,'r',encoding='utf-8') as f:
