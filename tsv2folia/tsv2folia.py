@@ -13,6 +13,7 @@ def convert(filename, targetfilename, rtl, set_file):
     doc = folia.Document(id=os.path.basename(filename.replace('.tsv','')))
     if rtl:
         doc.metadata['direction'] = 'rtl'
+    doc.metadata['status'] = 'converted'
     doc.declare(folia.Entity, set_file)
     text = doc.append(folia.Text)
     sentence = folia.Sentence(doc,generate_id_in=text)
