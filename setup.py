@@ -38,5 +38,6 @@ setup(
         ]
     },
     #include_package_data=True,
-    install_requires=['pynlpl >= 1.0']
+    install_requires=['pynlpl >= 1.0'],
+    zip_safe=False
 )
