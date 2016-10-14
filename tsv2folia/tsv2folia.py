@@ -52,15 +52,19 @@ def main():
 
     rtl = False
 
+    set_path = 'https://github.com/proycon/parseme-support/raw/master/'
+
     set_options = {
-        "parseme": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml",
-        "parseme-en": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-en.foliaset.xml",
-        "parseme-germanic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-germanic.foliaset.xml",
-        "parseme-it": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-it.foliaset.xml",
-        "parseme-lt": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-lt.foliaset.xml",
-        "parseme-other": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-other.foliaset.xml",
-        "parseme-romance": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-romance.foliaset.xml",
-        "parseme-slavic": "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-slavic.foliaset.xml",
+        "parseme": set_path + "foliaset.parseme.xml",
+        "english": set_path + "foliaset.english.xml",
+        "germanic": set_path + "foliaset.germanic.xml",        
+        "hebrew": set_path + "foliaset.hebrew.xml",
+        "italian": set_path + "foliaset.italian.xml",
+        "lithuanian": set_path + "foliaset.lithuanian.xml",
+        "other": set_path + "foliaset.other.xml",
+        "romance": set_path + "foliaset.romance.xml",
+        "slavic": set_path + "foliaset.slavic.xml",
+        "yiddish": set_path + "foliaset.yiddish.xml",
     }
 
     for filename in sys.argv[1:]:
