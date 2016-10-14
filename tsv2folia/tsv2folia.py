@@ -55,16 +55,16 @@ def main():
     set_path = 'https://github.com/proycon/parseme-support/raw/master/'
 
     set_options = {
-        "parseme": set_path + "foliaset.parseme.xml",
-        "english": set_path + "foliaset.english.xml",
-        "germanic": set_path + "foliaset.germanic.xml",        
-        "hebrew": set_path + "foliaset.hebrew.xml",
-        "italian": set_path + "foliaset.italian.xml",
-        "lithuanian": set_path + "foliaset.lithuanian.xml",
-        "other": set_path + "foliaset.other.xml",
-        "romance": set_path + "foliaset.romance.xml",
-        "slavic": set_path + "foliaset.slavic.xml",
-        "yiddish": set_path + "foliaset.yiddish.xml",
+        "parseme": set_path + "parseme-mwe.foliaset.xml",
+        "english": set_path + "parseme-mwe-en.foliaset.xml",
+        "germanic": set_path + "parseme-mwe-germanic.foliaset.xml",        
+        "hebrew": set_path + "parseme-mwe-hebrew.foliaset.xml",
+        "italian": set_path + "parseme-mwe-it.foliaset.xml",
+        "lithuanian": set_path + "parseme-mwe-lt.foliaset.xml",
+        "other": set_path + "parseme-mwe-other.foliaset.xml",
+        "romance": set_path + "parseme-mwe-romance.foliaset.xml",
+        "slavic": set_path + "parseme-mwe-slavic.foliaset.xml",
+        "yiddish": set_path + "parseme-mwe-yiddish.foliaset.xml",
     }
 
     for filename in sys.argv[1:]:
