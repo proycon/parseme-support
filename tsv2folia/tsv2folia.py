@@ -82,9 +82,10 @@ def main():
                 set_file = set_options[option]
                 continue
             else:
-                print("Wrong set file '{}'".format(option))
+                print("Wrong set file '{}'".format(option), file=sys.stderr)
             sys.exit(2)
-        else:
+        elif filename.startswith('--'):
+            print("Bad argument: {}".format(filename), file=sys.stderr)
             sys.exit(3)
 
         targetfilename = filename.replace('.tsv','') + '.folia.xml'
