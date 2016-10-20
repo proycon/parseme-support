@@ -15,7 +15,7 @@ def convert(filename, targetfilename, rtl, set_file):
         doc.metadata['direction'] = 'rtl'
     doc.metadata['status'] = 'untouched'
     doc.declare(folia.Entity, set_file)
-    doc.declare(folia.AnnotationType.POS, set='https://github.com/silvioricardoc/parseme-support/raw/master/parseme-pos.xml')
+    doc.declare(folia.AnnotationType.POS, set='https://gitlab.com/silvioricardoc/parseme-support/raw/master/parseme-pos.xml')
     text = doc.append(folia.Text)
     sentence = folia.Sentence(doc,generate_id_in=text)
     with open(filename,'r',encoding='utf-8') as f:
