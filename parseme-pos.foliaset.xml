@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xml:id="parseme-mwe-pos" type="closed" xmlns="http://ilk.uvt.nl/folia">
+    <class xml:id="V" label="V"/>
+</set>
