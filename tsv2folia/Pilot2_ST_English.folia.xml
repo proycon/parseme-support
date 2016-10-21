@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<FoLiA xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://ilk.uvt.nl/folia" version="1.0.1" xml:id="Pilot2_ST_English" generator="pynlpl.formats.folia-v1.0.1.74">
+<FoLiA xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://ilk.uvt.nl/folia" generator="pynlpl.formats.folia-v1.0.1.74" xml:id="Pilot2_ST_English" version="1.0.1">
   <metadata xmlns="http://ilk.uvt.nl/folia" type="native">
     <annotations>
-      <entity-annotation set="https://github.com/proycon/parseme-support/raw/master/parseme-mwe.foliaset.xml"/>
+      <entity-annotation set="https://github.com/proycon/parseme-support/raw/master/parseme-mwe-en.foliaset.xml"/>
+      <pos-annotation set="https://github.com/proycon/parseme-support/raw/master/parseme-pos.foliaset.xml"/>
     </annotations>
+    <meta id="status">untouched</meta>
   </metadata>
   <text xml:id="Pilot2_ST_English.text.1">
     <s xml:id="Pilot2_ST_English.text.1.s.1">

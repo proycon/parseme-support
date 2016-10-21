@@ -25,11 +25,9 @@ def convert(filename, targetfilename, rtl, set_file):
                 fields = line.strip().split('\t')
                 space = not (len(fields) > 2 and fields[2] == 'nsp')
                 sentence.append(folia.Word, text=fields[1],space=space)
-                if len(fields) > 3 : # ONLY APPEND POS IF PRESENT
-                    posAnnot = folia.PosAnnotation(doc, cls=fields[3], 
-                                  annotator="auto",
-                                  annotatortype=folia.AnnotatorType.AUTO)
-                    sentence[-1].append(posAnnot)
+                if len(fields) > 3 :
+                    posAnnot = folia.PosAnnotation(doc, cls=fields[3], annotator="auto", annotatortype=folia.AnnotatorType.AUTO )
+                    sentence[-1].append( posAnnot )
             elif len(sentence) > 0: #empty and we have a sentence to add
                 text.append(sentence)
                 sentence = folia.Sentence(doc, generate_id_in=text)
@@ -76,24 +74,26 @@ def main():
     }
 
     set_file = None
+    filename = None
 
-    for filename in sys.argv[1:]:        
-        if filename == '--rtl':
+    for arg in sys.argv[1:]:
+        if arg == '--rtl':
             rtl = True
             continue
-        elif filename.startswith('--set=') or filename.startswith('--config='):
-            option = filename[filename.find('=')+1:]
+        elif arg.startswith('--set=') or arg.startswith('--config='):
+            option = arg[arg.find('=')+1:]
             if option in set_options.keys():
                 set_file = set_options[option]
                 continue
-            else:
-                print("Wrong category-set configuration '{}'".format(option), file=sys.stderr))
-                sys.exit(2)
-        else:
-            pass
+            print("Wrong category-set configuration '{}'".format(option), file=sys.stderr)
+            sys.exit(2)
+        elif arg.startswith('--'):
+            print("Bad argument: {}".format(arg), file=sys.stderr)
+            sys.exit(3)        
         if set_file == None:
             print("You did not specify a category-set configuration")
             sys.exit(2)
+        filename = arg        
         targetfilename = filename.replace('.tsv','') + '.folia.xml'
         convert(filename, targetfilename, rtl, set_file)
 
