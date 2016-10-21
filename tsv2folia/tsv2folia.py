@@ -15,6 +15,7 @@ def convert(filename, targetfilename, rtl, set_file):
         doc.metadata['direction'] = 'rtl'
     doc.metadata['status'] = 'untouched'
     doc.declare(folia.Entity, set_file)
+    doc.declare(folia.AnnotationType.POS, set='https://github.com/proycon/parseme-support/raw/master/parseme-pos.xml')
     text = doc.append(folia.Text)
     sentence = folia.Sentence(doc,generate_id_in=text)
     with open(filename,'r',encoding='utf-8') as f:
@@ -23,6 +24,9 @@ def convert(filename, targetfilename, rtl, set_file):
                 fields = line.strip().split('\t')
                 space = not (len(fields) > 2 and fields[2] == 'nsp')
                 sentence.append(folia.Word, text=fields[1],space=space)
+                if len(fields) > 3 :
+                    posAnnot = folia.PosAnnotation(doc, cls=fields[3], annotator="auto", annotatortype=folia.AnnotatorType.AUTO )
+                    sentence[-1].append( posAnnot )
             elif len(sentence) > 0: #empty and we have a sentence to add
                 text.append(sentence)
                 sentence = folia.Sentence(doc, generate_id_in=text)
@@ -47,7 +51,7 @@ def main():
     if len(sys.argv) == 1:
         print("Usage: tsv2folia.py [tsvfile] [[tsvfile]] ..etc..",file=sys.stderr)
         print("Add parameter --rtl for right-to-left languages (arabic, hebrew, farsi, etc)!")
-        print("Add parameter --set=parseme[-xx] for specifying a set file (e.g., --set=parseme-en)!")
+        print("Add parameter --set=xx for specifying a set file (e.g., --set=english)!")
         sys.exit(2)
 
     rtl = False
@@ -67,8 +71,8 @@ def main():
         "yiddish": set_path + "parseme-mwe-yiddish.foliaset.xml",
     }
 
+    set_file = set_options["parseme"]
     for filename in sys.argv[1:]:
-        set_file = set_options["parseme"]
         if filename == '--rtl':
             rtl = True
             continue
@@ -78,8 +82,12 @@ def main():
                 set_file = set_options[option]
                 continue
             else:
-                print("Wrong set file '{}'".format(option))
+                print("Wrong set file '{}'".format(option), file=sys.stderr)
             sys.exit(2)
+        elif filename.startswith('--'):
+            print("Bad argument: {}".format(filename), file=sys.stderr)
+            sys.exit(3)
+
         targetfilename = filename.replace('.tsv','') + '.folia.xml'
         convert(filename, targetfilename, rtl, set_file)
 
