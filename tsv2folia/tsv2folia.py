@@ -33,7 +33,7 @@ def convert(filename, targetfilename, rtl, lang_set_file):
             if line.strip(): #not empty
                 fields = line.strip().split('\t')
                 space = not (len(fields) > 2 and fields[2] == 'nsp')
-                currentWord = folia.Word(doc, text=fields[1],space=space)
+                currentWord = folia.Word(doc, text=fields[1],space=space, generate_id_in=sentence)
                 sentence.append(currentWord)
                 if len(fields) > 3 :
                     word_mwes = fields[3]
