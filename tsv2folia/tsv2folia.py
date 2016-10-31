@@ -57,8 +57,8 @@ def convert(filename, targetfilename, rtl, lang_set_file):
                 for mweID, mweDetails in mweInfo.items():
                     mweCat = mweDetails['cat']
                     wordsInMwe = mweDetails['words']
-                    print('Adding VMWE {}:{}'.format(mweID, mweCat))                                                            
-                    print('wordsInMwe: {}'.format([w.text for w in wordsInMwe]))
+                    #print('Adding VMWE {}:{}'.format(mweID, mweCat))                                                            
+                    #print('wordsInMwe: {}'.format([w.text for w in wordsInMwe]))
                     mwe_list.append(folia.Entity, *wordsInMwe, cls=mweCat, annotatortype=folia.AnnotatorType.MANUAL)
                 sentence.append(mwe_list)
                 text.append(sentence)
