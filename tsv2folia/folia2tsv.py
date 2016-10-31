@@ -10,13 +10,10 @@ except ImportError:
     sys.exit(2)
 
 
-parser = argparse.ArgumentParser(description="""
-        Convert from FoLiA XML format to TSV (MWEs in a single column).""")
-parser.add_argument("FILE", type=str,
-        help="""An input XML file in FoLiA format""")
+parser = argparse.ArgumentParser(description="Convert from FoLiA XML format to TSV (MWEs in a single column).")
+parser.add_argument("FILE", type=str, help="An input XML file in FoLiA format")
 
 EMPTY = "_"
-
 
 class Main(object):
     def __init__(self, args):
