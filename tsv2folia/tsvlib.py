@@ -67,17 +67,50 @@ class TSVWord(collections.namedtuple('Word', 'surface nsp mwe_code pos')):
 ############################################################
 
 def iter_tsv_sentences(fileobj):
-    r"""Yield `Sentence` instances for all sentences in the underlying file."""
+    r"""Yield `TSVSentence` instances for all sentences in the underlying PARSEME TSV file."""
+    n_fields = len(fileobj.buffer.peek().split(b"\n")[0].split(b"\t"))
+    if 1 <= n_fields <= 5:
+        return iter_tsv_sentences_official(fileobj)
+    elif n_fields == 9:  # at least the example @kercos committed has 9 tabs in the first line
+        return iter_tsv_sentences_platinum(fileobj)
+    else:
+        raise Exception("Bad input file: not a PARSEME TSV format")
+
+
+def iter_tsv_sentences_official(fileobj):
+    # Format: rank|token|nsp|mwe-codes|pos
     sentence = TSVSentence()
     for line in fileobj:
         if line.strip():
             fields = line.strip().split('\t')
-            fields.extend(("", "", "", ""))  # fill in the optional fields
+            fields.extend([""]*5)  # fill in the optional fields
             surface = fields[1]
-            nsp = fields[2] == 'nsp'
+            nsp = (fields[2] == 'nsp')
             mwe_codes = [] if fields[3] in EMPTY else fields[3].strip().split(";")
             pos = None if fields[4] in EMPTY else fields[4]
             sentence.append(TSVWord(surface, nsp, mwe_codes, pos))
+        else:
+            yield sentence
+            sentence = TSVSentence()
+    if sentence:
+        yield sentence
+
+
+def iter_tsv_sentences_platinum(fileobj):
+    # Format: rank|token|nsp|mtw|first-mwe-id|type|second-mwe-id|type
+    next(fileobj); next(fileobj)  # skip the 2-line header
+    sentence = TSVSentence()
+    for line in fileobj:
+        if line.strip():
+            fields = line.strip().split('\t')
+            fields.extend([""]*9)  # fill in the optional fields
+            surface = fields[1]
+            nsp = (fields[2] == 'nsp')
+            # Ignore MTW in fields[3]
+            mwe_code_1 = [] if fields[4] in EMPTY else ["{}:{}".format(fields[4], fields[5])]
+            mwe_code_2 = [] if fields[6] in EMPTY else ["{}:{}".format(fields[6], fields[7])]
+            # Ignore free comments in fields[8]
+            sentence.append(TSVWord(surface, nsp, mwe_code_1 + mwe_code_2, None))
         else:
             yield sentence
             sentence = TSVSentence()
@@ -90,6 +123,6 @@ def iter_tsv_sentences(fileobj):
 if __name__ == "__main__":
     import sys
     with open(sys.argv[1]) as f:
-        for sentence in iter_tsv_sentences(f):
-            print("Sentence:", sentence)
-            print("MWEs:", sentence.mwe_infos())
+        for tsv_sentence in iter_tsv_sentences(f):
+            print("TSVSentence:", tsv_sentence)
+            print("MWEs:", tsv_sentence.mwe_infos())
