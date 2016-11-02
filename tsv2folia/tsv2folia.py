@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import tsvlib
 import argparse
 import sys
 import os
@@ -26,47 +27,29 @@ def convert(filename, targetfilename, rtl, lang_set_file):
     doc.declare(folia.Entity, lang_set_file) #ENTITY-SET definition    
     doc.declare(folia.AnnotationType.POS, set=POS_SET_URL) #POS-SET definition 
     text = doc.append(folia.Text)
-    sentence = folia.Sentence(doc,generate_id_in=text)
-    mweInfo = {}  # dict: mwe ID -> {type: mweCat, words:[list of words in the curent MWE]}
+
     with open(filename,'r',encoding='utf-8') as f:
-        for line in f:
-            if line.strip(): #not empty
-                fields = line.strip().split('\t')
-                space = not (len(fields) > 2 and fields[2] == 'nsp')
-                currentWord = folia.Word(doc, text=fields[1],space=space, generate_id_in=sentence)
-                sentence.append(currentWord)
-                if len(fields) > 3 :
-                    word_mwes = fields[3]
-                    if word_mwes not in EMPTY:
-                        word_mwes_split = word_mwes.split(';')
-                        for wm in word_mwes_split:
-                            #wm is either 'i' or 'i:mweCat' where i is an integer 
-                            wm_split = [x.strip() for x in wm.split(':')]
-                            index = int(wm_split[0])
-                            mweCatsAndWords = mweInfo.setdefault(index, {'words':[]})
-                            if len(wm_split)>1:
-                                mweCatsAndWords['cat'] = wm_split[1]
-                            mweCatsAndWords['words'].append(currentWord)             
-                if len(fields) > 4:
-                    pos = fields[4]
-                    if pos not in EMPTY:
-                        posAnnot = folia.PosAnnotation(doc, cls=pos, annotator="auto", annotatortype=folia.AnnotatorType.AUTO )
-                        currentWord.append( posAnnot )
-            elif len(sentence) > 0: #empty and we have a sentence to add
-                mwe_list = folia.EntitiesLayer(doc)
-                for mweID, mweDetails in mweInfo.items():
-                    mweCat = mweDetails['cat']
-                    wordsInMwe = mweDetails['words']
-                    #print('Adding VMWE {}:{}'.format(mweID, mweCat))                                                            
-                    #print('wordsInMwe: {}'.format([w.text for w in wordsInMwe]))
-                    mwe_list.append(folia.Entity, *wordsInMwe, cls=mweCat, annotatortype=folia.AnnotatorType.MANUAL)
-                sentence.append(mwe_list)
-                text.append(sentence)
-                sentence = folia.Sentence(doc, generate_id_in=text)
-                mweInfo = {}  # dict: mwe ID -> {type: mweCat, words:[list of words ids]}                
-    if sentence.count(folia.Word) > 0: #don't forget the very last one
-        text.append(sentence)
+        for tsv_sentence in tsvlib.iter_tsv_sentences(f):
+            folia_sentence = folia.Sentence(doc, generate_id_in=text)
+            text.append(folia_sentence)
+
+            for tsv_word in tsv_sentence:
+                folia_word = folia.Word(doc, text=tsv_word.surface, space=(not tsv_word.nsp), generate_id_in=folia_sentence)
+                folia_sentence.append(folia_word)
+                if tsv_word.pos:
+                    folia_word.append(folia.PosAnnotation(doc, cls=tsv_word.pos, annotator="auto", annotatortype=folia.AnnotatorType.AUTO))
+
+            mwe_infos = tsv_sentence.mwe_infos()
+            if mwe_infos:
+                folia_mwe_list = folia.EntitiesLayer(doc)
+                folia_sentence.append(folia_mwe_list)
+                for mweid, mweinfo in mwe_infos.items():
+                    assert mweinfo.category, "Conversion to FoLiA requires all MWEs to have a category"  # checkme
+                    folia_words = [folia_sentence[i] for i in mweinfo.word_indexes]
+                    folia_mwe_list.append(folia.Entity, *folia_words, cls=mweinfo.category, annotatortype=folia.AnnotatorType.MANUAL)
+
     doc.save(targetfilename)
+
 
 #This function can be called directly by FLAT
 def flat_convert(filename, targetfilename, *args, **kwargs):
@@ -136,6 +119,7 @@ set_options = {
 
 parser = argparse.ArgumentParser(description="Convert from TSV to FoLiA XML.")
 parser.add_argument("FILE", type=str, help="An input TSV file") #nargs=1
+parser.add_argument("--stdout", action="store_true", help="Output data in stdout")
 parser.add_argument("--language", type = str.lower, choices = set_options.keys(), help="The input language") #dest="LANG", nargs=1 
  
 
@@ -146,7 +130,7 @@ class Main(object):
     def run(self):
         lang_options = set_options[self.args.language]
         filename = self.args.FILE
-        targetfilename = filename.replace('.tsv','') + '.folia.xml'
+        targetfilename = "/dev/stdout" if self.args.stdout else filename.replace('.tsv','') + '.folia.xml'
         rtl = lang_options['rtl']
         lang_set_file = lang_options['set_file']        
         convert(filename, targetfilename, rtl, lang_set_file)

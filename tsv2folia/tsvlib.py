@@ -20,7 +20,7 @@ import collections
 EMPTY = ["_", ""]
 
 
-class Sentence(list):
+class TSVSentence(list):
     r"""A list of Words."""
 
     def mwe_infos(self):
@@ -35,7 +35,7 @@ class Sentence(list):
 
 class MWEInfo(collections.namedtuple('MWEInfo', 'category word_indexes')):
     r"""Represents all MWEs in a sentence.
-    CAREFUL: word indexes are 1-based, as in the TSV file.
+    CAREFUL: word indexes start at 0 (not at 1, as in the WordIDs).
 
     Arguments:
     @type category: str
@@ -44,7 +44,7 @@ class MWEInfo(collections.namedtuple('MWEInfo', 'category word_indexes')):
     pass
 
 
-class Word(collections.namedtuple('Word', 'surface nsp mwe_code pos')):
+class TSVWord(collections.namedtuple('Word', 'surface nsp mwe_code pos')):
     r"""Represents a word in the TSV file.
 
     Arguments:
@@ -64,9 +64,11 @@ class Word(collections.namedtuple('Word', 'surface nsp mwe_code pos')):
             yield mwe_id, mwe_categ
 
 
+############################################################
+
 def iter_tsv_sentences(fileobj):
     r"""Yield `Sentence` instances for all sentences in the underlying file."""
-    sentence = Sentence()
+    sentence = TSVSentence()
     for line in fileobj:
         if line.strip():
             fields = line.strip().split('\t')
@@ -75,10 +77,12 @@ def iter_tsv_sentences(fileobj):
             nsp = fields[2] == 'nsp'
             mwe_codes = [] if fields[3] in EMPTY else fields[3].strip().split(";")
             pos = None if fields[4] in EMPTY else fields[4]
-            sentence.append(Word(surface, nsp, mwe_codes, pos))
+            sentence.append(TSVWord(surface, nsp, mwe_codes, pos))
         else:
             yield sentence
-            sentence = Sentence()
+            sentence = TSVSentence()
+    if sentence:
+        yield sentence
 
 
 #####################################################################
