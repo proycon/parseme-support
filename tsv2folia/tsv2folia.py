@@ -126,8 +126,9 @@ parser.add_argument("--language", type = str.lower, choices = set_options.keys()
 class Main(object):
     def __init__(self, args):
         self.args = args
-    
+
     def run(self):
+        sys.excepthook = tsvlib.excepthook
         lang_options = set_options[self.args.language]
         filename = self.args.FILE
         targetfilename = "/dev/stdout" if self.args.stdout else filename.replace('.tsv','') + '.folia.xml'

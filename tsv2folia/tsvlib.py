@@ -16,6 +16,7 @@ r"""
 
 
 import collections
+import sys
 
 EMPTY = ["_", ""]
 
@@ -25,6 +26,7 @@ class TSVSentence(list):
 
     def mwe_infos(self):
         r"""Return a dict {mwe_id: MWEInfo} for all MWEs in this sentence."""
+        if self: global_last_lineno(self[0].lineno)
         mwe_infos = {}
         for word_index, word in enumerate(self):
             for mwe_id, mwe_categ in word.mwes_id_categ():
@@ -44,10 +46,11 @@ class MWEInfo(collections.namedtuple('MWEInfo', 'category word_indexes')):
     pass
 
 
-class TSVWord(collections.namedtuple('Word', 'surface nsp mwe_code pos')):
+class TSVWord(collections.namedtuple('Word', 'lineno surface nsp mwe_code pos')):
     r"""Represents a word in the TSV file.
 
     Arguments:
+    @type lineno: int
     @type surface: str
     @type nsp: bool
     @type mwe_code: list[str]
@@ -57,6 +60,7 @@ class TSVWord(collections.namedtuple('Word', 'surface nsp mwe_code pos')):
         r"""For each MWE code in `self.mwe_code`, yield an (id, categ) pair.
         @rtype Iterable[(int, Optional[str])]
         """
+        global_last_lineno(self.lineno)
         for mwe_str in self.mwe_code:
             split = mwe_str.split(":")
             mwe_id = int(split[0])
@@ -64,10 +68,29 @@ class TSVWord(collections.namedtuple('Word', 'surface nsp mwe_code pos')):
             yield mwe_id, mwe_categ
 
 
+def global_last_lineno(lineno):
+    # Update global `last_lineno` var
+    global last_lineno
+    last_lineno = lineno
+
+
 ############################################################
+
 
 def iter_tsv_sentences(fileobj):
     r"""Yield `TSVSentence` instances for all sentences in the underlying PARSEME TSV file."""
+    return TSVReader(fileobj).iter_tsv_sentences()
+
+
+class TSVReader:
+    def __init__(self, fileobj):
+        self.fileobj = fileobj
+
+
+def iter_tsv_sentences(fileobj):
+    global last_filename
+    last_filename = fileobj.name
+
     n_fields = len(fileobj.buffer.peek().split(b"\n")[0].split(b"\t"))
     if 1 <= n_fields <= 5:
         return iter_tsv_sentences_official(fileobj)
@@ -80,7 +103,8 @@ def iter_tsv_sentences(fileobj):
 def iter_tsv_sentences_official(fileobj):
     # Format: rank|token|nsp|mwe-codes|pos
     sentence = TSVSentence()
-    for line in fileobj:
+    for lineno, line in enumerate(fileobj, 1):
+        global_last_lineno(lineno)
         if line.strip():
             fields = line.strip().split('\t')
             fields.extend([""]*5)  # fill in the optional fields
@@ -88,7 +112,7 @@ def iter_tsv_sentences_official(fileobj):
             nsp = (fields[2] == 'nsp')
             mwe_codes = [] if fields[3] in EMPTY else fields[3].strip().split(";")
             pos = None if fields[4] in EMPTY else fields[4]
-            sentence.append(TSVWord(surface, nsp, mwe_codes, pos))
+            sentence.append(TSVWord(lineno, surface, nsp, mwe_codes, pos))
         else:
             yield sentence
             sentence = TSVSentence()
@@ -100,7 +124,8 @@ def iter_tsv_sentences_platinum(fileobj):
     # Format: rank|token|nsp|mtw|first-mwe-id|type|second-mwe-id|type
     next(fileobj); next(fileobj)  # skip the 2-line header
     sentence = TSVSentence()
-    for line in fileobj:
+    for lineno, line in enumerate(fileobj, 1):
+        global_last_lineno(lineno)
         if line.strip():
             fields = line.strip().split('\t')
             fields.extend([""]*9)  # fill in the optional fields
@@ -110,7 +135,7 @@ def iter_tsv_sentences_platinum(fileobj):
             mwe_code_1 = [] if fields[4] in EMPTY else ["{}:{}".format(fields[4], fields[5])]
             mwe_code_2 = [] if fields[6] in EMPTY else ["{}:{}".format(fields[6], fields[7])]
             # Ignore free comments in fields[8]
-            sentence.append(TSVWord(surface, nsp, mwe_code_1 + mwe_code_2, None))
+            sentence.append(TSVWord(lineno, surface, nsp, mwe_code_1 + mwe_code_2, None))
         else:
             yield sentence
             sentence = TSVSentence()
@@ -120,8 +145,23 @@ def iter_tsv_sentences_platinum(fileobj):
 
 #####################################################################
 
+def excepthook(exctype, value, tb):
+    global last_lineno
+    global last_filename
+    if value and last_lineno:
+        last_filename = last_filename or "???"
+        err_msg = "===> ERROR when reading {} (line {})" \
+                .format(last_filename, last_lineno)
+        if sys.stderr.isatty():
+            err_msg = "\x1b[31m{}\x1b[m".format(err_msg)
+        print(err_msg, file=sys.stderr)
+    return sys.__excepthook__(exctype, value, tb)
+
+
+#####################################################################
+
 if __name__ == "__main__":
-    import sys
+    sys.excepthook = excepthook
     with open(sys.argv[1]) as f:
         for tsv_sentence in iter_tsv_sentences(f):
             print("TSVSentence:", tsv_sentence)
