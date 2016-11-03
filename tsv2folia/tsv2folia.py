@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import tsv2folia.tsvlib
 import argparse
 import sys
 import os
@@ -9,6 +8,10 @@ try:
 except ImportError:
     print("ERROR: PyNLPl not found, please install pynlpl (pip install pynlpl)",file=sys.stderr)
     sys.exit(2)
+
+sys.path.append(os.path.dirname(__file__))
+import tsvlib
+
 
 EMPTY = ['', '_']
 
