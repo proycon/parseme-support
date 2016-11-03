@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import tsvlib
+import tsv2folia.tsvlib
 import argparse
 import sys
 import os
