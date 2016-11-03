@@ -9,7 +9,7 @@ except ImportError:
     print("ERROR: PyNLPl not found, please install pynlpl (pip install pynlpl)",file=sys.stderr)
     sys.exit(2)
 
-import tsv2folia.tsvlib
+import tsv2folia.tsvlib as tsvlib
 
 
 EMPTY = ['', '_']
