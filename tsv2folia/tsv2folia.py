@@ -139,6 +139,9 @@ class Main(object):
         lang_set_file = lang_options['set_file']        
         convert(filename, targetfilename, rtl, lang_set_file)
 
+def main():
+    Main(parser.parse_args()).run()
+
 #####################################################
 
 if __name__ == "__main__":
