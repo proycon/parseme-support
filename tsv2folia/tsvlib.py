@@ -92,7 +92,7 @@ def iter_tsv_sentences(fileobj):
     last_filename = fileobj.name
 
     n_fields = len(fileobj.buffer.peek().split(b"\n")[0].split(b"\t"))
-    if 1 <= n_fields <= 5:
+    if 3 <= n_fields <= 5:
         return iter_tsv_sentences_official(fileobj)
     elif n_fields == 9:  # at least the example @kercos committed has 9 tabs in the first line
         return iter_tsv_sentences_platinum(fileobj)
