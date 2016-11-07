@@ -9,6 +9,9 @@ except ImportError:
     print("ERROR: PyNLPl not found, please install pynlpl (pip install pynlpl)",file=sys.stderr)
     sys.exit(2)
 
+#sys.path.append(os.path.dirname(__file__))
+#import tsvlib
+
 import tsv2folia.tsvlib as tsvlib
 
 
@@ -123,10 +126,15 @@ set_options = {
     },
 }
 
+def valid_input_file(file_name):
+    if not file_name.endswith('.tsv'):
+        raise argparse.ArgumentTypeError("File name must end with '.tsv'")
+    return file_name
+
 parser = argparse.ArgumentParser(description="Convert from TSV to FoLiA XML.")
-parser.add_argument("FILE", type=str, help="An input TSV file") #nargs=1
+parser.add_argument("FILE", type=valid_input_file, help="An input TSV file")
 parser.add_argument("--stdout", action="store_true", help="Output data in stdout")
-parser.add_argument("--language", type = str.lower, choices = set_options.keys(), help="The input language") #dest="LANG", nargs=1 
+parser.add_argument("--language", type = str.lower, choices = set_options.keys(), help="The input language", required=True) 
  
 
 class Main(object):
@@ -137,7 +145,7 @@ class Main(object):
         sys.excepthook = tsvlib.excepthook
         lang_options = set_options[self.args.language]
         filename = self.args.FILE
-        targetfilename = "/dev/stdout" if self.args.stdout else filename.replace('.tsv','') + '.folia.xml'
+        targetfilename = "/dev/stdout" if self.args.stdout else filename[:-len('.tsv')] + '.folia.xml'
         rtl = lang_options['rtl']
         lang_set_file = lang_options['set_file']        
         convert(filename, targetfilename, rtl, lang_set_file)
