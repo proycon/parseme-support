@@ -116,7 +116,11 @@ set_options = {
     "yiddish": {
         'set_file': set_path + "parseme-mwe-yiddish.foliaset.xml",
         'rtl': True
-    }
+    },
+    "maltese": {
+        'set_file': set_path + "parseme-mwe-maltese.foliaset.xml",
+        'rtl': False
+    },
 }
 
 parser = argparse.ArgumentParser(description="Convert from TSV to FoLiA XML.")
