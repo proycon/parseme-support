@@ -121,7 +121,7 @@ def iter_tsv_sentences_official(fileobj):
 
 
 def iter_tsv_sentences_platinum(fileobj):
-    # Format: rank|token|nsp|mtw|first-mwe-id|type|second-mwe-id|type|...
+    # Format: rank|token|nsp|mtw|1st-mwe-id|1st-type|2nd-mwe-id|2nd-type|[3rd...Nth]|[comments]
     next(fileobj); next(fileobj)  # skip the 2-line header
     sentence = TSVSentence()
     for lineno, line in enumerate(fileobj, 1):
@@ -132,10 +132,10 @@ def iter_tsv_sentences_platinum(fileobj):
             surface = fields[1]
             nsp = (fields[2] == 'nsp')
             # Ignore MTW in fields[3]
-            mwe_code_1 = [] if fields[4] in EMPTY else ["{}:{}".format(fields[4], fields[5])]
-            mwe_code_2 = [] if fields[6] in EMPTY else ["{}:{}".format(fields[6], fields[7])]
-            # Ignore free comments in fields[8]
-            sentence.append(TSVWord(lineno, surface, nsp, mwe_code_1 + mwe_code_2, None))
+            mwe_codes = ["{}:{}".format(fields[i], fields[i+1])
+                    for i in xrange(4, len(fields)-1, 2) if fields[i] not in EMPTY]
+            # Ignore free comments in fields[-1], present if len(fields)%2==1
+            sentence.append(TSVWord(lineno, surface, nsp, mwe_codes, None))
         else:
             yield sentence
             sentence = TSVSentence()
