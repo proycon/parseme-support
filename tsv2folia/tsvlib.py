@@ -94,7 +94,7 @@ def iter_tsv_sentences(fileobj):
     n_fields = len(fileobj.buffer.peek().split(b"\n")[0].split(b"\t"))
     if 3 <= n_fields <= 5:
         return iter_tsv_sentences_official(fileobj)
-    elif 8 <= n_fields:
+    elif 6 <= n_fields:
         return iter_tsv_sentences_platinum(fileobj)
     else:
         raise Exception("Bad input file: header does not match a PARSEME TSV format")
