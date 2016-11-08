@@ -94,10 +94,10 @@ def iter_tsv_sentences(fileobj):
     n_fields = len(fileobj.buffer.peek().split(b"\n")[0].split(b"\t"))
     if 3 <= n_fields <= 5:
         return iter_tsv_sentences_official(fileobj)
-    elif n_fields == 9:  # at least the example @kercos committed has 9 tabs in the first line
+    elif 8 <= n_fields:
         return iter_tsv_sentences_platinum(fileobj)
     else:
-        raise Exception("Bad input file: not a PARSEME TSV format")
+        raise Exception("Bad input file: header does not match a PARSEME TSV format")
 
 
 def iter_tsv_sentences_official(fileobj):
@@ -121,7 +121,7 @@ def iter_tsv_sentences_official(fileobj):
 
 
 def iter_tsv_sentences_platinum(fileobj):
-    # Format: rank|token|nsp|mtw|first-mwe-id|type|second-mwe-id|type
+    # Format: rank|token|nsp|mtw|first-mwe-id|type|second-mwe-id|type|...
     next(fileobj); next(fileobj)  # skip the 2-line header
     sentence = TSVSentence()
     for lineno, line in enumerate(fileobj, 1):
