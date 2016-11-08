@@ -20,3 +20,8 @@ Usage
 - The output will be a similarly named file, but with extension ``folia.xml``.
   This can be uploaded to FLAT.
 
+Input Formats
+--------------
+
+Input files should be in one of the PARSEME TSV formats, as described [here](http://typo.uni-konstanz.de/parseme/index.php/2-general/142-parseme-shared-task-on-automatic-detection-of-verbal-mwes#format).
+
