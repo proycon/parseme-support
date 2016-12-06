@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xml:id="parseme-mwe-parsemefr" type="closed" xmlns="http://ilk.uvt.nl/folia">
+    <!-- This set is particularly designed for French PARSEME-FR project needs -->
+    <!-- General-purpose multiword expression categories -->
+    <class xml:id="EP-1-CRAN" label="EP-1-CRAN"/>
+    <class xml:id="EP-2.1-ID" label="EP-2.1-ID"/>
+    <class xml:id="EP-2.2-PRED" label="EP-2.2-PRED"/>
+    <class xml:id="EP-3-IRREG" label="EP-3-IRREG"/>
+    <class xml:id="EP-4.1-LEX" label="EP-4.1-LEX"/>
+    <class xml:id="EP-4.2-PREP" label="EP-4.2-PREP"/>
+    <class xml:id="EP-4.3-DET" label="EP-4.3-DET"/>
+    <class xml:id="EP-4.4-ZERO" label="EP-4.4-ZERO"/>
+    <class xml:id="EP-5.1-MORPHO" label="EP-5.1-MORPHO"/>
+    <class xml:id="EP-5.2-INSERT" label="EP-5.2-INSERT"/>
+    <class xml:id="EP-6.1-OP" label="EP-6.1-OP"/>
+    <class xml:id="EP-6.2-seV" label="EP-6.2-seV"/>
+    <class xml:id="EP-6.3-CL" label="EP-6.3-CL"/>
+    <!-- Named entity categories -->
+    <class xml:id="EN-1-PERS.prim" label="EN-1-PERS.prim"/>
+    <class xml:id="EN-2-ORG.prim" label="EN-2-ORG.prim"/>
+    <class xml:id="EN-3-LOC.prim" label="EN-3-LOC.prim"/>
+    <class xml:id="EN-4-PROD.prim" label="EN-4-PROD.prim"/>
+    <class xml:id="EN-5-EVE.prim" label="EN-5-EVE.prim"/>
+    <class xml:id="EN-1-PERS.final" label="EN-1-PERS.final"/>
+    <class xml:id="EN-2-ORG.final" label="EN-2-ORG.final"/>
+    <class xml:id="EN-3-LOC.final" label="EN-3-LOC.final"/>
+    <class xml:id="EN-4-PROD.final" label="EN-4-PROD.final"/>
+    <class xml:id="EN-5-EVE.final" label="EN-5-EVE.final"/>    
+</set>
