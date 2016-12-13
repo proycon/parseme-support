@@ -4,7 +4,7 @@
     <class xml:id="LVC" label="LVC"/>
     <class xml:id="ID" label="ID"/>
     <class xml:id="IReflV" label="IReflV"/>
-<!--    <class xml:id="VPC" label="VPC"/> -->
+    <class xml:id="VPC" label="VPC"/>
     <class xml:id="TODEFINE" label="TODEFINE"/>
     <class xml:id="OTH" label="OTH"/>
 </set>
