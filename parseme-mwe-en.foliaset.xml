@@ -6,4 +6,5 @@
 <!--    <class xml:id="IReflV" label="IReflV"/> -->
     <class xml:id="VPC" label="VPC"/> 
     <class xml:id="OTH" label="OTH"/>
+    <class xml:id="NonVMWE" label="NonVMWE"/>
 </set>
