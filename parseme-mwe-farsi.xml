@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <set xml:id="parseme-mwe-other" type="closed" xmlns="http://ilk.uvt.nl/folia">
-    <!-- This set is to be used with all shared task languages from the OTHER language group: Greek, Hebrew, Hungarian -->
+    <!-- This set is to be used for Farsi -->
     <class xml:id="LVC" label="LVC"/>
     <class xml:id="ID" label="ID"/>
 <!--    <class xml:id="IReflV" label="IReflV"/> -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <set xml:id="parseme-mwe-lt" type="closed" xmlns="http://ilk.uvt.nl/folia">
-    <!-- This set is to be used with Lithuanian -->
+    <!-- This set is to be used for Lithuanian -->
     <class xml:id="LVC" label="LVC"/>
     <class xml:id="ID" label="ID"/>
 <!--    <class xml:id="IReflV" label="IReflV"/> -->
