@@ -91,7 +91,12 @@ def iter_tsv_sentences(fileobj):
     global last_filename
     last_filename = fileobj.name
 
-    n_fields = len(fileobj.buffer.peek().split(b"\n")[0].split(b"\t"))
+    first_lines = fileobj.buffer.peek().split(b"\n")
+    first_real_lines = [L for L in first_lines if not L.startswith(b"#")]
+    if not first_real_lines:
+        raise Exception("ERROR: Input file is empty (or contains too many comments)")
+
+    n_fields = len(first_real_lines[0].split(b"\t"))
     if 3 <= n_fields <= 5:
         return iter_tsv_sentences_official(fileobj)
     elif 6 <= n_fields:
@@ -105,7 +110,9 @@ def iter_tsv_sentences_official(fileobj):
     sentence = TSVSentence()
     for lineno, line in enumerate(fileobj, 1):
         global_last_lineno(lineno)
-        if line.strip():
+        if line.startswith("#"):
+            continue  # skip comment line
+        elif line.strip():
             fields = line.strip().split('\t')
             fields.extend([""]*5)  # fill in the optional fields
             surface = fields[1]
@@ -126,14 +133,16 @@ def iter_tsv_sentences_platinum(fileobj):
     sentence = TSVSentence()
     for lineno, line in enumerate(fileobj, 1):
         global_last_lineno(lineno)
-        if line.strip():
+        if line.startswith("#"):
+            continue  # skip comment line
+        elif line.strip():
             fields = line.strip().split('\t')
             fields.extend([""]*9)  # fill in the optional fields
             surface = fields[1]
             nsp = (fields[2] == 'nsp')
             # Ignore MTW in fields[3]
-            mwe_codes = ["{}:{}".format(fields[i], fields[i+1])
-                    for i in xrange(4, len(fields)-1, 2) if fields[i] not in EMPTY]
+            mwe_codes = ["{}:{}".format(fields[i], fields[i+1]) if fields[i+1] else fields[i]
+                    for i in range(4, len(fields)-1, 2) if fields[i] not in EMPTY]
             # Ignore free comments in fields[-1], present if len(fields)%2==1
             sentence.append(TSVWord(lineno, surface, nsp, mwe_codes, None))
         else:
@@ -144,6 +153,8 @@ def iter_tsv_sentences_platinum(fileobj):
 
 
 #####################################################################
+
+last_filename = last_lineno = None
 
 def excepthook(exctype, value, tb):
     global last_lineno
