@@ -13,8 +13,8 @@
     <class xml:id="EP-5.1-MORPHO" label="EP-5.1-MORPHO"/>
     <class xml:id="EP-5.2-INSERT" label="EP-5.2-INSERT"/>
     <class xml:id="EP-6.1-OP" label="EP-6.1-OP"/>
-    <class xml:id="EP-6.2-seV" label="EP-6.2-seV"/>
-    <class xml:id="EP-6.3-CL" label="EP-6.3-CL"/>
+    <class xml:id="EP-6.2-CL" label="EP-6.2-CL"/>
+    <class xml:id="EP-6.3-seV" label="EP-6.3-seV"/>
     <!-- Named entity categories -->
     <class xml:id="EN-1-PERS.prim" label="EN-1-PERS.prim"/>
     <class xml:id="EN-2-ORG.prim" label="EN-2-ORG.prim"/>
