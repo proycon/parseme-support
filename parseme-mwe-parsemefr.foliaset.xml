@@ -10,6 +10,7 @@
     <class xml:id="EP-4.2-PREP" label="EP-4.2-PREP"/>
     <class xml:id="EP-4.3-DET" label="EP-4.3-DET"/>
     <class xml:id="EP-4.4-ZERO" label="EP-4.4-ZERO"/>
+    <class xml:id="EP-4.5-LEXflou" label="EP-4.5-LEXflou"/>    
     <class xml:id="EP-5.1-MORPHO" label="EP-5.1-MORPHO"/>
     <class xml:id="EP-5.2-INSERT" label="EP-5.2-INSERT"/>
     <class xml:id="EP-6.1-OP" label="EP-6.1-OP"/>
