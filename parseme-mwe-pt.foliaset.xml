@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <set xml:id="parseme-mwe-pt" type="closed" xmlns="http://ilk.uvt.nl/folia">
     <!-- This set is by Portuguese. It's the same as Romance, plus Non-VMWE -->
-    <class xml:id="LVC" label="LVC.full"/>
-    <class xml:id="LVC.cause" label="LVC.cause"/>    
-    <class xml:id="MVC" label="MVC"/>        
-    <class xml:id="IAV" label="IAV"/>            
-    <class xml:id="ID" label="VID"/>
-    <class xml:id="IReflV" label="IRV"/>
+    <class xml:id="LVC" label="LVC"/>
+    <class xml:id="ID" label="ID"/>
+    <class xml:id="IReflV" label="IReflV"/>
 <!--    <class xml:id="VPC" label="VPC"/> -->
     <class xml:id="OTH" label="OTH"/>
     <class xml:id="Non-VMWE" label="Non-VMWE"/>
