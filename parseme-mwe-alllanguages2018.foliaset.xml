@@ -8,6 +8,6 @@
     <class xml:id="VPC.full" label="VPC.full"/> 
     <class xml:id="VPC.semi" label="VPC.semi"/>     
     <class xml:id="MVC" label="MVC"/>
-    <class xml:id="IAV" label="IAV (experimental)"/>    
-<!--    <class xml:id="Non-VMWE" label="Non-VMWE"/> -->
+    <class xml:id="IAV" label="{optional} IAV"/>    
+    <class xml:id="NotMWE" label="{optional} NotVMWE"/>
 </set>
