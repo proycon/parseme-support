@@ -12,7 +12,7 @@ except ImportError:
 #sys.path.append(os.path.dirname(__file__))
 #import tsvlib
 
-import tsv2folia.tsvlib as tsvlib
+import tsvlib
 
 
 EMPTY = ['', '_']
@@ -127,7 +127,7 @@ set_options = {
 }
 
 def valid_input_file(file_name):
-    if not file_name.endswith('.tsv'):
+    if not file_name.endswith('.tsv') and not file_name.endswith('.parsemetsv'):
         raise argparse.ArgumentTypeError("File name must end with '.tsv'")
     return file_name
 
@@ -145,7 +145,7 @@ class Main(object):
         sys.excepthook = tsvlib.excepthook
         lang_options = set_options[self.args.language]
         filename = self.args.FILE
-        targetfilename = "/dev/stdout" if self.args.stdout else filename[:-len('.tsv')] + '.folia.xml'
+        targetfilename = "/dev/stdout" if self.args.stdout else filename.rsplit(".",1)[0] + '.folia.xml'
         rtl = lang_options['rtl']
         lang_set_file = lang_options['set_file']        
         convert(filename, targetfilename, rtl, lang_set_file)
