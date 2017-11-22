@@ -62,7 +62,7 @@ class TSVWord(collections.namedtuple('Word', 'lineno surface nsp mwe_code pos'))
         """
         global_last_lineno(self.lineno)
         for mwe_str in self.mwe_code:
-            split = mwe_str.split(":")
+            split = mwe_str.split(":", 1)
             mwe_id = int(split[0])
             mwe_categ = (split[1] if len(split) > 1 else None)
             yield mwe_id, mwe_categ
