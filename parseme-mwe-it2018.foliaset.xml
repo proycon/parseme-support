@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xml:id="parseme-mwe-alllanguages1.1" type="closed" xmlns="http://ilk.uvt.nl/folia">
+    <!-- This set is for all languages' pilot for edition 1.1 -->
+    <class xml:id="LVC.full" label="LVC.full"/>
+    <class xml:id="LVC.cause" label="LVC.cause"/>    
+    <class xml:id="VID" label="VID"/>    
+    <class xml:id="IRV" label="IRV"/>
+    <class xml:id="IRV" label="LS.ICV"/>    
+    <class xml:id="VPC.full" label="VPC.full"/> 
+    <class xml:id="VPC.semi" label="VPC.semi"/>     
+    <class xml:id="MVC" label="MVC"/>
+    <class xml:id="IAV" label="{optional} IAV"/>    
+    <class xml:id="NotMWE" label="{optional} NotVMWE"/>
+    <class xml:id="TODO" label="{change-me} TODO"/>    
+</set>
