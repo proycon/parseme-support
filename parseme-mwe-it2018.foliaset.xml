@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<set xml:id="parseme-mwe-alllanguages1.1" type="closed" xmlns="http://ilk.uvt.nl/folia">
+<set xml:id="parseme-mwe-it2018" type="closed" xmlns="http://ilk.uvt.nl/folia">
     <!-- This set is for all languages' pilot for edition 1.1 -->
     <class xml:id="LVC.full" label="LVC.full"/>
     <class xml:id="LVC.cause" label="LVC.cause"/>    
