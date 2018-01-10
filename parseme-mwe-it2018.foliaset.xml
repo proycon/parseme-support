@@ -5,7 +5,7 @@
     <class xml:id="LVC.cause" label="LVC.cause"/>    
     <class xml:id="VID" label="VID"/>    
     <class xml:id="IRV" label="IRV"/>
-    <class xml:id="IRV" label="LS.ICV"/>    
+    <class xml:id="LS.ICV" label="LS.ICV"/>    
     <class xml:id="VPC.full" label="VPC.full"/> 
     <class xml:id="VPC.semi" label="VPC.semi"/>     
     <class xml:id="MVC" label="MVC"/>
