@@ -12,7 +12,7 @@ except ImportError:
 #sys.path.append(os.path.dirname(__file__))
 #import tsvlib
 
-from tsv2folia.tsvlib import tsvlib
+import tsv2folia.tsvlib as tsvlib
 #import tsvlib
 
 
