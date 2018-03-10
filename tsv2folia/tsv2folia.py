@@ -12,8 +12,8 @@ except ImportError:
 #sys.path.append(os.path.dirname(__file__))
 #import tsvlib
 
-import tsv2folia.tsvlib as tsvlib
-#import tsvlib
+#import tsv2folia.tsvlib as tsvlib
+import tsvlib
 
 
 EMPTY = ['', '_']

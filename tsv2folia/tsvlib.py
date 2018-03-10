@@ -30,12 +30,19 @@ class TSVSentence(list):
         mwe_infos = {}
         for word_index, word in enumerate(self):
             for mwe_id, mwe_categ in word.mwes_id_categ():
-                mwe_info = mwe_infos.setdefault(mwe_id, MWEInfo(mwe_categ, []))
+                mwe_info = mwe_infos.setdefault(mwe_id, MWEInfo(None, []))
                 mwe_info.word_indexes.append(word_index)
+                if mwe_categ:
+                    if mwe_info.category and mwe_info.category != mwe_categ:
+                        raise Exception(
+                            'Conflit of category for MWE #{}: {} vs {}' \
+                            .format(mwe_id, mwe_info.category, mwe_categ))
+                    mwe_info.category = mwe_categ
+
         return mwe_infos
 
 
-class MWEInfo(collections.namedtuple('MWEInfo', 'category word_indexes')):
+class MWEInfo:
     r"""Represents all MWEs in a sentence.
     CAREFUL: word indexes start at 0 (not at 1, as in the WordIDs).
 
@@ -43,7 +50,9 @@ class MWEInfo(collections.namedtuple('MWEInfo', 'category word_indexes')):
     @type category: str
     @type word_indexes: list[int]
     """
-    pass
+    def __init__(self, category, word_indexes):
+        self.category, self.word_indexes = category, word_indexes
+
 
 
 class TSVWord(collections.namedtuple('Word', 'lineno surface nsp mwe_code pos')):
