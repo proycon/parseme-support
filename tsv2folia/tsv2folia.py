@@ -12,8 +12,8 @@ except ImportError:
 #sys.path.append(os.path.dirname(__file__))
 #import tsvlib
 
-import tsv2folia.tsvlib as tsvlib # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
-#import tsvlib # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
+#import tsv2folia.tsvlib as tsvlib # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
+import tsvlib # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
 
 
 EMPTY = ['', '_']

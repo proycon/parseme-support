@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xml:id="parseme-mwe-pt" type="closed" xmlns="http://ilk.uvt.nl/folia">
+  <!-- This set is used for annotating errors in written essays-->
+  <class xml:id="1.1-pont-aus" label="1.1-pont-aus"/>
+  <class xml:id="1.2-pont-exc" label="1.2-pont-exc"/>
+  <class xml:id="1.3-pont-erro" label="1.3-pont-erro"/>
+  <class xml:id="2.1-rege-verb" label="2.1-rege-verb"/>
+  <class xml:id="2.2-rege-nom" label="2.2-rege-nom"/>
+  <class xml:id="3.1-crase-aus" label="3.1-crase-aus"/>
+  <class xml:id="3.2-crase-exc" label="3.2-crase-exc"/>
+  <class xml:id="4.1-concor-verb" label="4.1-concor-verb"/>
+  <class xml:id="4.2-concor-nom" label="4.2-concor-nom"/>
+  <class xml:id="4.3-concor-anaf" label="4.3-concor-anaf"/>
+  <class xml:id="5.1-pronom-aus" label="5.1-pronom-aus"/>
+  <class xml:id="5.2-pronom-exc" label="5.2-pronom-exc"/>
+  <class xml:id="5.3-pronom-erro" label="5.3-pronom-erro"/>
+  <class xml:id="6.1-prepo-aus" label="6.1-prepo-aus"/>
+  <class xml:id="6.2-prepo-exc" label="6.2-prepo-exc"/>
+  <class xml:id="6.3-prepo-erro" label="6.3-prepo-erro"/>
+  <class xml:id="7.1-determ-aus" label="7.1-determ-aus"/>
+  <class xml:id="7.2-determ-exc" label="7.2-determ-exc"/>
+  <class xml:id="7.3-determ-erro" label="7.3-determ-erro"/>
+  <class xml:id="8.1-conjunc" label="8.1-conjunc"/>
+  <class xml:id="9.1-verbo-mod" label="9.1-verbo-mod"/>
+  <class xml:id="9.2-verbo-nom" label="9.2-verbo-nom"/>
+  <class xml:id="10-text" label="10-text"/>
+  <class xml:id="11-sem-espec" label="11-sem-espec"/>
+</set>
