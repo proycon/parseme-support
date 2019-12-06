@@ -19,7 +19,7 @@ setup(
     license = "GPL",
     keywords = "",
     url = "https://github.com/proycon/parseme-support",
-    packages=['tsv2folia'],
+    packages=['convert2folia'],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -34,7 +34,9 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'tsv2folia = tsv2folia.tsv2folia:main',
+            'parsemetsv2folia = convert2folia.parsemetsv2folia:main', 
+            'cupt2folia       = convert2folia.cupt2folia:main', 
+            'conllu2folia     = convert2folia.conllu2folia:main', 
         ]
     },
     #include_package_data=True,
