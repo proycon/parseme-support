@@ -1,0 +1,13 @@
+1	They	_	_
+2	buy	_	1:VID
+3	and	_	1
+4	sell	_	1
+5	books	nsp	_
+6	.	_	_
+
+1	I	_	_
+2	have	_	1:LVC.full
+3	no	_	_
+4	clue	nsp	1
+5	.	_	_
+

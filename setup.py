@@ -34,9 +34,7 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'parsemetsv2folia = convert2folia.parsemetsv2folia:main', 
-            'cupt2folia       = convert2folia.cupt2folia:main', 
-            'conllu2folia     = convert2folia.conllu2folia:main', 
+            'convert2folia     = convert2folia.convert2folia:main', 
         ]
     },
     #include_package_data=True,
