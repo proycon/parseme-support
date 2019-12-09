@@ -1,0 +1,82 @@
+# sent_id = s1
+# text = Zatrzasnął drzwi od mieszkania, dwa razy przekręcił klucz, nacisnął klamkę, by sprawdzić, czy dobrze zamknięte, zbiegł po schodach, minął furtkę, także ją zamknął, i znalazł się na wąskiej uliczce między ogródkami, gdzie drzemały w majowym słońcu trójkątne ciemnozielone świerki, jakich nie było w pobliżu jego domu.
+# orig_file_sentence = 010-2-000000001_morph_1.57-s#1
+# conversion_status = complete
+1	Zatrzasnął	zatrzasnąć	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	0	root	0:root	_
+2	drzwi	drzwi	NOUN	subst:pl:acc:p2	Case=Acc|Gender=Neut|Number=Ptan	1	obj	_	_
+3	od	od	ADP	prep:gen:nwok	AdpType=Voc|Case=Gen|Variant=Short	4	case	_	_
+4	mieszkania	mieszkanie	NOUN	subst:sg:gen:n2	Case=Gen|Gender=Neut|Number=Sing	2	nmod	_	SpaceAfter=No
+5	,	,	PUNCT	interp	PunctType=Comm	8	punct	_	_
+6	dwa	dwa	NUM	num:pl:acc:m3:congr	Animacy=Inan|Case=Acc|Gender=Masc|NumForm=Word|Number=Plur	7	nummod	_	_
+7	razy	raz	NOUN	subst:pl:acc:m3	Animacy=Inan|Case=Acc|Gender=Masc|Number=Plur	8	obl	_	_
+8	przekręcił	przekręcić	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	1	conj	1:conj	_
+9	klucz	klucz	NOUN	subst:sg:acc:m3	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	8	obj	_	SpaceAfter=No
+10	,	,	PUNCT	interp	PunctType=Comm	11	punct	_	_
+11	nacisnął	nacisnąć	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	1	conj	1:conj	_
+12	klamkę	klamka	NOUN	subst:sg:acc:f	Case=Acc|Gender=Fem|Number=Sing	11	obj	_	SpaceAfter=No
+13	,	,	PUNCT	interp	PunctType=Comm	14	punct	_	_
+14	by	by	SCONJ	comp	_	15	mark	_	_
+15	sprawdzić	sprawdzić	VERB	inf:perf	Aspect=Perf|VerbForm=Inf|Voice=Act	11	advcl	_	SpaceAfter=No
+16	,	,	PUNCT	interp	PunctType=Comm	19	punct	_	_
+17	czy	czy	PART	qub	PartType=Int	19	advmod	_	_
+18	dobrze	dobrze	ADV	adv:pos	Degree=Pos	19	advmod	_	_
+19	zamknięte	zamknąć	ADJ	ppas:pl:nom:p2:perf:aff	Aspect=Perf|Case=Nom|Gender=Neut|Number=Ptan|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Pass	15	obj	_	SpaceAfter=No
+20	,	,	PUNCT	interp	PunctType=Comm	21	punct	_	_
+21	zbiegł	zbiec	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	1	conj	1:conj	_
+22	po	po	ADP	prep:loc	AdpType=Prep|Case=Loc	23	case	_	_
+23	schodach	schody	NOUN	subst:pl:loc:p2	Case=Loc|Gender=Neut|Number=Ptan	21	obl	_	SpaceAfter=No
+24	,	,	PUNCT	interp	PunctType=Comm	25	punct	_	_
+25	minął	minąć	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	1	conj	1:conj	_
+26	furtkę	furtka	NOUN	subst:sg:acc:f	Case=Acc|Gender=Fem|Number=Sing	25	obj	_	SpaceAfter=No
+27	,	,	PUNCT	interp	PunctType=Comm	30	punct	_	_
+28	także	także	PART	qub	_	30	advmod	_	_
+29	ją	on	PRON	ppron3:sg:acc:f:ter:akc:npraep	Case=Acc|Gender=Fem|Number=Sing|Person=3|PrepCase=Npr|PronType=Prs|Variant=Long	30	obj	_	_
+30	zamknął	zamknąć	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	1	conj	1:conj	SpaceAfter=No
+31	,	,	PUNCT	interp	PunctType=Comm	33	punct	_	_
+32	i	i	CCONJ	conj	_	33	cc	_	_
+33	znalazł	znaleźć	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	1	conj	0:root|1:conj	_
+34	się	się	PRON	qub	PronType=Prs|Reflex=Yes	33	expl:impers	_	_
+35	na	na	ADP	prep:loc	AdpType=Prep|Case=Loc	37	case	_	_
+36	wąskiej	wąski	ADJ	adj:sg:loc:f:pos	Case=Loc|Degree=Pos|Gender=Fem|Number=Sing	37	amod	_	_
+37	uliczce	uliczka	NOUN	subst:sg:loc:f	Case=Loc|Gender=Fem|Number=Sing	33	obl	_	_
+38	między	między	ADP	prep:inst	AdpType=Prep|Case=Ins	39	case	_	_
+39	ogródkami	ogródek	NOUN	subst:pl:inst:m3	Animacy=Inan|Case=Ins|Gender=Masc|Number=Plur	37	nmod	_	SpaceAfter=No
+40	,	,	PUNCT	interp	PunctType=Comm	42	punct	_	_
+41	gdzie	gdzie	ADV	adv	PronType=Int,Rel	42	advmod	_	_
+42	drzemały	drzemać	VERB	praet:pl:m3:imperf	Animacy=Inan|Aspect=Imp|Gender=Masc|Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin|Voice=Act	39	acl:relcl	_	_
+43	w	w	ADP	prep:loc:nwok	AdpType=Voc|Case=Loc|Variant=Short	45	case	_	_
+44	majowym	majowy	ADJ	adj:sg:loc:n2:pos	Case=Loc|Degree=Pos|Gender=Neut|Number=Sing	45	amod	_	_
+45	słońcu	słońce	NOUN	subst:sg:loc:n2	Case=Loc|Gender=Neut|Number=Sing	42	obl	_	_
+46	trójkątne	trójkątny	ADJ	adj:pl:nom:m3:pos	Animacy=Inan|Case=Nom|Degree=Pos|Gender=Masc|Number=Plur	48	amod	_	_
+47	ciemnozielone	ciemnozielony	ADJ	adj:pl:nom:m3:pos	Animacy=Inan|Case=Nom|Degree=Pos|Gender=Masc|Number=Plur	48	amod	_	_
+48	świerki	świerk	NOUN	subst:pl:nom:m3	Animacy=Inan|Case=Nom|Gender=Masc|Number=Plur	42	nsubj	_	SpaceAfter=No
+49	,	,	PUNCT	interp	PunctType=Comm	52	punct	_	_
+50	jakich	jaki	PRON	adj:pl:gen:m3:pos	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur|PronType=Int,Rel	52	nsubj	_	_
+51	nie	nie	PART	qub	PartType=Neg	52	advmod	_	_
+52	było	być	VERB	praet:sg:n2:imperf	Aspect=Imp|Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	48	acl:relcl	_	_
+53	w	w	ADP	prep:loc:nwok	AdpType=Voc|Case=Loc|Variant=Short	56	case	_	_
+54	pobliżu	pobliże	NOUN	subst:sg:loc:n2	Case=Loc|Gender=Neut|Number=Sing	53	fixed	_	_
+55	jego	on	PRON	ppron3:sg:gen:m1:ter:akc:npraep	Animacy=Hum|Case=Gen|Gender=Masc|Number=Sing|Person=3|PrepCase=Npr|PronType=Prs|Variant=Long	56	nmod	_	_
+56	domu	dom	NOUN	subst:sg:gen:m3	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	52	obl	_	SpaceAfter=No
+57	.	.	PUNCT	interp	PunctType=Peri	1	punct	_	_
+
+# sent_id = s2
+# text = Swoją drogę do tego miasta autor "Krótkich dni" zaczął z bardzo daleka.
+# orig_file_sentence = 010-2-000000001_morph_2.49-s#2
+# conversion_status = complete
+1	Swoją	swój	PRON	adj:sg:acc:f:pos	Case=Acc|Gender=Fem|Number=Sing|Poss=Yes|PronType=Prs|Reflex=Yes	2	nmod	_	_
+2	drogę	droga	NOUN	subst:sg:acc:f	Case=Acc|Gender=Fem|Number=Sing	11	obj	_	_
+3	do	do	ADP	prep:gen	AdpType=Prep|Case=Gen	5	case	_	_
+4	tego	ten	DET	adj:sg:gen:n2:pos	Case=Gen|Gender=Neut|Number=Sing|PronType=Dem	5	det	_	_
+5	miasta	miasto	NOUN	subst:sg:gen:n2	Case=Gen|Gender=Neut|Number=Sing	2	nmod	_	_
+6	autor	autor	NOUN	subst:sg:nom:m1	Animacy=Hum|Case=Nom|Gender=Masc|Number=Sing	11	nsubj	_	_
+7	"	"	PUNCT	interp	PunctType=Quot	9	punct	_	SpaceAfter=No
+8	Krótkich	krótki	ADJ	adj:pl:gen:m3:pos	Animacy=Inan|Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	9	amod	_	_
+9	dni	dzień	NOUN	subst:pl:gen:m3	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	6	nmod	_	SpaceAfter=No
+10	"	"	PUNCT	interp	PunctType=Quot	9	punct	_	_
+11	zaczął	zacząć	VERB	praet:sg:m1:perf	Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_
+12	z	z	ADP	prep:gen:nwok	AdpType=Voc|Case=Gen|Variant=Short	14	case	_	_
+13	bardzo	bardzo	ADV	adv:pos	Degree=Pos	14	advmod	_	_
+14	daleka	daleki	ADJ	adjp	PrepCase=Pre	11	obl	_	SpaceAfter=No
+15	.	.	PUNCT	interp	PunctType=Peri	11	punct	_	_
+
