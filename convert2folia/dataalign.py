@@ -32,8 +32,8 @@ import sys
 
 
 # Import the Categories class
-#from categories import Categories # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
-from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
+from categories import Categories # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
+#from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
 
 
 try:
@@ -66,7 +66,7 @@ LANGS_WITH_CANONICAL_VERB_ON_RIGHT = set("DE EU HI TR".split())
 LANGS_WITH_VERB_OCCURRENCES_ON_RIGHT = LANGS_WITH_CANONICAL_VERB_ON_RIGHT - set(["DE"])
 
 # Languages that are written right-to-left (FLAT needs to know this for proper displaying)
-LANGS_WRITTEN_RTL = set(["FA HE YI"])
+LANGS_WRITTEN_RTL = set(["AR FA HE YI"])
 
 
 ############################################################
@@ -953,7 +953,7 @@ def calculate_conllu_paths(file_paths, warn=True):
 
 
 RE_BASENAME_NOEXT = re.compile(
-    r'^(?:.*/)*(.*?)(\.(folia|xml|conllu|conllup|parsemetsv|tsv|tar|gz|bz2|zip))*$')
+    r'^(?:.*/)*(.*?)(\.(folia|xml|conllu|conllup|cupt|parsemetsv-pos|parsemetsv|tsv|tar|gz|bz2|zip))*$')
 
 def basename_without_ext(filepath):
     r"""Return the basename of `filepath` without any known extensions."""
@@ -1008,7 +1008,7 @@ def _iter_parseme_file(lang, file_path, default_mwe_category):
         return ConlluIterator(corpusinfo, fileobj, default_mwe_category)
     if n_cols == 11: # missing header tolerated
         corpusinfo.colnames = ConlluIterator.UD_KEYS + ["PARSEME:MWE"]
-        return ConllupIterator(corpusinfo, fileobj, default_mwe_category)        
+        return ConllupIterator(corpusinfo, fileobj, default_mwe_category)
     raise Exception("Unknown file format (TSV with {} columns): {!r}".format(n_cols, file_path))
 
 
@@ -1442,7 +1442,8 @@ class ConllupIterator(AbstractFileIterator):
 
 
 class ParsemeTSVIterator(AbstractFileIterator):
-    def __init__(self, corpusinfo, fileobj, default_mwe_category):        
+    def __init__(self, corpusinfo, fileobj, default_mwe_category):
+        #corpusinfo.colnames = ["ID", "FORM", "MISC", "PARSEME:MWE"]
         super().__init__(corpusinfo, fileobj, default_mwe_category)
 
     def get_token_and_mwecodes(self, data):
@@ -1450,9 +1451,9 @@ class ParsemeTSVIterator(AbstractFileIterator):
             xpos = data[4]
         else:
             xpos = EMPTY
-            #warn_once(
-            #    "{}:{}".format(self.corpusinfo.file_path, self.lineno),
-            #    "Silently ignoring 5th parsemetsv column")
+            warn_once(
+                "{}:{}".format(self.corpusinfo.file_path, self.lineno),
+                "Considering 5th parsemetsv column as POS")
             #data.pop()  # remove data[-1]
         if len(data) != 4:
             self.warn("PARSEMETSV line has {n} columns, not 4", n=len(data))
