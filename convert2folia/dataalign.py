@@ -37,7 +37,7 @@ from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER b
 
 
 try:
-    from pynlpl.formats import folia
+    from folia import main as folia
 except ImportError:
     exit("ERROR: FoliaPY not found, please run this code: pip3 install folia")
 
