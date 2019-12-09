@@ -7,9 +7,10 @@ from lxml import etree as ElementTree
 
 #sys.path.append(os.path.dirname(__file__))
 
-#import convert2folia.dataalign as dataalign # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
-import dataalign # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
-from dataalign import folia
+import convert2folia.dataalign as dataalign # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
+#import dataalign # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
+from convert2folia.dataalign import folia # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
+#from dataalign import folia # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
 
 POS_SET_URL = "https://github.com/proycon/parseme-support/raw/master/parseme-pos.foliaset.xml"
 CATEG_SET_URL = "https://github.com/proycon/parseme-support/raw/master/parseme-mwe-alllanguages2018.foliaset.xml"

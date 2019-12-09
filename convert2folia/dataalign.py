@@ -32,11 +32,12 @@ import sys
 
 
 # Import the Categories class
-from categories import Categories
+#from categories import Categories # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
+from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
 
 
 try:
-    from folia import main as folia
+    from pynlpl.formats import folia
 except ImportError:
     exit("ERROR: FoliaPY not found, please run this code: pip3 install folia")
 

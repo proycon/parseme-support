@@ -34,7 +34,7 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'convert2folia     = convert2folia.convert2folia:main', 
+            'convert2folia = convert2folia.convert2folia:main', 
         ]
     },
     #include_package_data=True,
