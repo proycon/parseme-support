@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FoLiA xmlns="http://ilk.uvt.nl/folia" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_" version="2.2.1" generator="foliapy-v2.2.2">
+  <metadata type="native">
+    <annotations>
+      <text-annotation set="https://raw.githubusercontent.com/proycon/folia/master/setdefinitions/text.foliaset.ttl"/>
+      <entity-annotation set="https://github.com/proycon/parseme-support/raw/master/parseme-mwe-alllanguages2018.foliaset.xml"/>
+      <pos-annotation set="https://github.com/proycon/parseme-support/raw/master/parseme-pos.foliaset.xml"/>
+      <sentence-annotation/>
+      <token-annotation/>
+    </annotations>
+    <meta id="status">untouched</meta>
+    <meta id="conllup-colnames">ID`FORM`LEMMA`UPOS`XPOS`FEATS`HEAD`DEPREL`DEPS`MISC</meta>
+  </metadata>
+  <text xml:id="_.text.1">
+    <s xml:id="_.text.1.s.1">
+      <w xml:id="_.text.1.s.1.w.1">
+        <t>Zatrzasnął</t>
+        <foreign-data>
+          <conllup-columns columns="1`Zatrzasnął`zatrzasnąć`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`0`root`0:root`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.2">
+        <t>drzwi</t>
+        <foreign-data>
+          <conllup-columns columns="2`drzwi`drzwi`NOUN`subst:pl:acc:p2`Case=Acc|Gender=Neut|Number=Ptan`1`obj`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.3">
+        <t>od</t>
+        <foreign-data>
+          <conllup-columns columns="3`od`od`ADP`prep:gen:nwok`AdpType=Voc|Case=Gen|Variant=Short`4`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.4" space="no">
+        <t>mieszkania</t>
+        <foreign-data>
+          <conllup-columns columns="4`mieszkania`mieszkanie`NOUN`subst:sg:gen:n2`Case=Gen|Gender=Neut|Number=Sing`2`nmod`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.5">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="5`,`,`PUNCT`interp`PunctType=Comm`8`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.6">
+        <t>dwa</t>
+        <foreign-data>
+          <conllup-columns columns="6`dwa`dwa`NUM`num:pl:acc:m3:congr`Animacy=Inan|Case=Acc|Gender=Masc|NumForm=Word|Number=Plur`7`nummod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.7">
+        <t>razy</t>
+        <foreign-data>
+          <conllup-columns columns="7`razy`raz`NOUN`subst:pl:acc:m3`Animacy=Inan|Case=Acc|Gender=Masc|Number=Plur`8`obl`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.8">
+        <t>przekręcił</t>
+        <foreign-data>
+          <conllup-columns columns="8`przekręcił`przekręcić`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`1`conj`1:conj`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.9" space="no">
+        <t>klucz</t>
+        <foreign-data>
+          <conllup-columns columns="9`klucz`klucz`NOUN`subst:sg:acc:m3`Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing`8`obj`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.10">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="10`,`,`PUNCT`interp`PunctType=Comm`11`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.11">
+        <t>nacisnął</t>
+        <foreign-data>
+          <conllup-columns columns="11`nacisnął`nacisnąć`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`1`conj`1:conj`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.12" space="no">
+        <t>klamkę</t>
+        <foreign-data>
+          <conllup-columns columns="12`klamkę`klamka`NOUN`subst:sg:acc:f`Case=Acc|Gender=Fem|Number=Sing`11`obj`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.13">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="13`,`,`PUNCT`interp`PunctType=Comm`14`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.14">
+        <t>by</t>
+        <foreign-data>
+          <conllup-columns columns="14`by`by`SCONJ`comp`_`15`mark`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.15" space="no">
+        <t>sprawdzić</t>
+        <foreign-data>
+          <conllup-columns columns="15`sprawdzić`sprawdzić`VERB`inf:perf`Aspect=Perf|VerbForm=Inf|Voice=Act`11`advcl`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.16">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="16`,`,`PUNCT`interp`PunctType=Comm`19`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.17">
+        <t>czy</t>
+        <foreign-data>
+          <conllup-columns columns="17`czy`czy`PART`qub`PartType=Int`19`advmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.18">
+        <t>dobrze</t>
+        <foreign-data>
+          <conllup-columns columns="18`dobrze`dobrze`ADV`adv:pos`Degree=Pos`19`advmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.19" space="no">
+        <t>zamknięte</t>
+        <foreign-data>
+          <conllup-columns columns="19`zamknięte`zamknąć`ADJ`ppas:pl:nom:p2:perf:aff`Aspect=Perf|Case=Nom|Gender=Neut|Number=Ptan|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Pass`15`obj`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.20">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="20`,`,`PUNCT`interp`PunctType=Comm`21`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.21">
+        <t>zbiegł</t>
+        <foreign-data>
+          <conllup-columns columns="21`zbiegł`zbiec`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`1`conj`1:conj`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.22">
+        <t>po</t>
+        <foreign-data>
+          <conllup-columns columns="22`po`po`ADP`prep:loc`AdpType=Prep|Case=Loc`23`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.23" space="no">
+        <t>schodach</t>
+        <foreign-data>
+          <conllup-columns columns="23`schodach`schody`NOUN`subst:pl:loc:p2`Case=Loc|Gender=Neut|Number=Ptan`21`obl`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.24">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="24`,`,`PUNCT`interp`PunctType=Comm`25`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.25">
+        <t>minął</t>
+        <foreign-data>
+          <conllup-columns columns="25`minął`minąć`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`1`conj`1:conj`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.26" space="no">
+        <t>furtkę</t>
+        <foreign-data>
+          <conllup-columns columns="26`furtkę`furtka`NOUN`subst:sg:acc:f`Case=Acc|Gender=Fem|Number=Sing`25`obj`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.27">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="27`,`,`PUNCT`interp`PunctType=Comm`30`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.28">
+        <t>także</t>
+        <foreign-data>
+          <conllup-columns columns="28`także`także`PART`qub`_`30`advmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.29">
+        <t>ją</t>
+        <foreign-data>
+          <conllup-columns columns="29`ją`on`PRON`ppron3:sg:acc:f:ter:akc:npraep`Case=Acc|Gender=Fem|Number=Sing|Person=3|PrepCase=Npr|PronType=Prs|Variant=Long`30`obj`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.30" space="no">
+        <t>zamknął</t>
+        <foreign-data>
+          <conllup-columns columns="30`zamknął`zamknąć`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`1`conj`1:conj`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.31">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="31`,`,`PUNCT`interp`PunctType=Comm`33`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.32">
+        <t>i</t>
+        <foreign-data>
+          <conllup-columns columns="32`i`i`CCONJ`conj`_`33`cc`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.33">
+        <t>znalazł</t>
+        <foreign-data>
+          <conllup-columns columns="33`znalazł`znaleźć`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`1`conj`0:root|1:conj`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.34">
+        <t>się</t>
+        <foreign-data>
+          <conllup-columns columns="34`się`się`PRON`qub`PronType=Prs|Reflex=Yes`33`expl:impers`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.35">
+        <t>na</t>
+        <foreign-data>
+          <conllup-columns columns="35`na`na`ADP`prep:loc`AdpType=Prep|Case=Loc`37`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.36">
+        <t>wąskiej</t>
+        <foreign-data>
+          <conllup-columns columns="36`wąskiej`wąski`ADJ`adj:sg:loc:f:pos`Case=Loc|Degree=Pos|Gender=Fem|Number=Sing`37`amod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.37">
+        <t>uliczce</t>
+        <foreign-data>
+          <conllup-columns columns="37`uliczce`uliczka`NOUN`subst:sg:loc:f`Case=Loc|Gender=Fem|Number=Sing`33`obl`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.38">
+        <t>między</t>
+        <foreign-data>
+          <conllup-columns columns="38`między`między`ADP`prep:inst`AdpType=Prep|Case=Ins`39`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.39" space="no">
+        <t>ogródkami</t>
+        <foreign-data>
+          <conllup-columns columns="39`ogródkami`ogródek`NOUN`subst:pl:inst:m3`Animacy=Inan|Case=Ins|Gender=Masc|Number=Plur`37`nmod`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.40">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="40`,`,`PUNCT`interp`PunctType=Comm`42`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.41">
+        <t>gdzie</t>
+        <foreign-data>
+          <conllup-columns columns="41`gdzie`gdzie`ADV`adv`PronType=Int,Rel`42`advmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.42">
+        <t>drzemały</t>
+        <foreign-data>
+          <conllup-columns columns="42`drzemały`drzemać`VERB`praet:pl:m3:imperf`Animacy=Inan|Aspect=Imp|Gender=Masc|Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin|Voice=Act`39`acl:relcl`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.43">
+        <t>w</t>
+        <foreign-data>
+          <conllup-columns columns="43`w`w`ADP`prep:loc:nwok`AdpType=Voc|Case=Loc|Variant=Short`45`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.44">
+        <t>majowym</t>
+        <foreign-data>
+          <conllup-columns columns="44`majowym`majowy`ADJ`adj:sg:loc:n2:pos`Case=Loc|Degree=Pos|Gender=Neut|Number=Sing`45`amod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.45">
+        <t>słońcu</t>
+        <foreign-data>
+          <conllup-columns columns="45`słońcu`słońce`NOUN`subst:sg:loc:n2`Case=Loc|Gender=Neut|Number=Sing`42`obl`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.46">
+        <t>trójkątne</t>
+        <foreign-data>
+          <conllup-columns columns="46`trójkątne`trójkątny`ADJ`adj:pl:nom:m3:pos`Animacy=Inan|Case=Nom|Degree=Pos|Gender=Masc|Number=Plur`48`amod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.47">
+        <t>ciemnozielone</t>
+        <foreign-data>
+          <conllup-columns columns="47`ciemnozielone`ciemnozielony`ADJ`adj:pl:nom:m3:pos`Animacy=Inan|Case=Nom|Degree=Pos|Gender=Masc|Number=Plur`48`amod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.48" space="no">
+        <t>świerki</t>
+        <foreign-data>
+          <conllup-columns columns="48`świerki`świerk`NOUN`subst:pl:nom:m3`Animacy=Inan|Case=Nom|Gender=Masc|Number=Plur`42`nsubj`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.49">
+        <t>,</t>
+        <foreign-data>
+          <conllup-columns columns="49`,`,`PUNCT`interp`PunctType=Comm`52`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.50">
+        <t>jakich</t>
+        <foreign-data>
+          <conllup-columns columns="50`jakich`jaki`PRON`adj:pl:gen:m3:pos`Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur|PronType=Int,Rel`52`nsubj`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.51">
+        <t>nie</t>
+        <foreign-data>
+          <conllup-columns columns="51`nie`nie`PART`qub`PartType=Neg`52`advmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.52">
+        <t>było</t>
+        <foreign-data>
+          <conllup-columns columns="52`było`być`VERB`praet:sg:n2:imperf`Aspect=Imp|Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`48`acl:relcl`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.53">
+        <t>w</t>
+        <foreign-data>
+          <conllup-columns columns="53`w`w`ADP`prep:loc:nwok`AdpType=Voc|Case=Loc|Variant=Short`56`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.54">
+        <t>pobliżu</t>
+        <foreign-data>
+          <conllup-columns columns="54`pobliżu`pobliże`NOUN`subst:sg:loc:n2`Case=Loc|Gender=Neut|Number=Sing`53`fixed`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.55">
+        <t>jego</t>
+        <foreign-data>
+          <conllup-columns columns="55`jego`on`PRON`ppron3:sg:gen:m1:ter:akc:npraep`Animacy=Hum|Case=Gen|Gender=Masc|Number=Sing|Person=3|PrepCase=Npr|PronType=Prs|Variant=Long`56`nmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.56" space="no">
+        <t>domu</t>
+        <foreign-data>
+          <conllup-columns columns="56`domu`dom`NOUN`subst:sg:gen:m3`Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing`52`obl`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.1.w.57">
+        <t>.</t>
+        <foreign-data>
+          <conllup-columns columns="57`.`.`PUNCT`interp`PunctType=Peri`1`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <foreign-data>
+        <kv-pair key="sent_id" value="s1"/>
+      </foreign-data>
+      <foreign-data>
+        <kv-pair key="text" value="Zatrzasnął drzwi od mieszkania, dwa razy przekręcił klucz, nacisnął klamkę, by sprawdzić, czy dobrze zamknięte, zbiegł po schodach, minął furtkę, także ją zamknął, i znalazł się na wąskiej uliczce między ogródkami, gdzie drzemały w majowym słońcu trójkątne ciemnozielone świerki, jakich nie było w pobliżu jego domu."/>
+      </foreign-data>
+      <foreign-data>
+        <kv-pair key="orig_file_sentence" value="010-2-000000001_morph_1.57-s#1"/>
+      </foreign-data>
+      <foreign-data>
+        <kv-pair key="conversion_status" value="complete"/>
+      </foreign-data>
+    </s>
+    <s xml:id="_.text.1.s.2">
+      <w xml:id="_.text.1.s.2.w.1">
+        <t>Swoją</t>
+        <foreign-data>
+          <conllup-columns columns="1`Swoją`swój`PRON`adj:sg:acc:f:pos`Case=Acc|Gender=Fem|Number=Sing|Poss=Yes|PronType=Prs|Reflex=Yes`2`nmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.2">
+        <t>drogę</t>
+        <foreign-data>
+          <conllup-columns columns="2`drogę`droga`NOUN`subst:sg:acc:f`Case=Acc|Gender=Fem|Number=Sing`11`obj`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.3">
+        <t>do</t>
+        <foreign-data>
+          <conllup-columns columns="3`do`do`ADP`prep:gen`AdpType=Prep|Case=Gen`5`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.4">
+        <t>tego</t>
+        <foreign-data>
+          <conllup-columns columns="4`tego`ten`DET`adj:sg:gen:n2:pos`Case=Gen|Gender=Neut|Number=Sing|PronType=Dem`5`det`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.5">
+        <t>miasta</t>
+        <foreign-data>
+          <conllup-columns columns="5`miasta`miasto`NOUN`subst:sg:gen:n2`Case=Gen|Gender=Neut|Number=Sing`2`nmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.6">
+        <t>autor</t>
+        <foreign-data>
+          <conllup-columns columns="6`autor`autor`NOUN`subst:sg:nom:m1`Animacy=Hum|Case=Nom|Gender=Masc|Number=Sing`11`nsubj`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.7" space="no">
+        <t>"</t>
+        <foreign-data>
+          <conllup-columns columns="7`&quot;`&quot;`PUNCT`interp`PunctType=Quot`9`punct`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.8">
+        <t>Krótkich</t>
+        <foreign-data>
+          <conllup-columns columns="8`Krótkich`krótki`ADJ`adj:pl:gen:m3:pos`Animacy=Inan|Case=Gen|Degree=Pos|Gender=Masc|Number=Plur`9`amod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.9" space="no">
+        <t>dni</t>
+        <foreign-data>
+          <conllup-columns columns="9`dni`dzień`NOUN`subst:pl:gen:m3`Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur`6`nmod`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.10">
+        <t>"</t>
+        <foreign-data>
+          <conllup-columns columns="10`&quot;`&quot;`PUNCT`interp`PunctType=Quot`9`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.11">
+        <t>zaczął</t>
+        <foreign-data>
+          <conllup-columns columns="11`zaczął`zacząć`VERB`praet:sg:m1:perf`Animacy=Hum|Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act`0`root`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.12">
+        <t>z</t>
+        <foreign-data>
+          <conllup-columns columns="12`z`z`ADP`prep:gen:nwok`AdpType=Voc|Case=Gen|Variant=Short`14`case`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.13">
+        <t>bardzo</t>
+        <foreign-data>
+          <conllup-columns columns="13`bardzo`bardzo`ADV`adv:pos`Degree=Pos`14`advmod`_`_"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.14" space="no">
+        <t>daleka</t>
+        <foreign-data>
+          <conllup-columns columns="14`daleka`daleki`ADJ`adjp`PrepCase=Pre`11`obl`_`SpaceAfter=No"/>
+        </foreign-data>
+      </w>
+      <w xml:id="_.text.1.s.2.w.15">
+        <t>.</t>
+        <foreign-data>
+          <conllup-columns columns="15`.`.`PUNCT`interp`PunctType=Peri`11`punct`_`_"/>
+        </foreign-data>
+      </w>
+      <foreign-data>
+        <kv-pair key="sent_id" value="s2"/>
+      </foreign-data>
+      <foreign-data>
+        <kv-pair key="text" value="Swoją drogę do tego miasta autor &quot;Krótkich dni&quot; zaczął z bardzo daleka."/>
+      </foreign-data>
+      <foreign-data>
+        <kv-pair key="orig_file_sentence" value="010-2-000000001_morph_2.49-s#2"/>
+      </foreign-data>
+      <foreign-data>
+        <kv-pair key="conversion_status" value="complete"/>
+      </foreign-data>
+    </s>
+  </text>
+</FoLiA>

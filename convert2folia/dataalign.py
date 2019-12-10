@@ -32,12 +32,13 @@ import sys
 
 
 # Import the Categories class
-from categories import Categories # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
-#from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
+#from categories import Categories # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
+from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
 
 
 try:
     from folia import main as folia
+#    from pylpl.formats import folia 
 except ImportError:
     exit("ERROR: FoliaPY not found, please run this code: pip3 install folia")
 
@@ -953,7 +954,7 @@ def calculate_conllu_paths(file_paths, warn=True):
 
 
 RE_BASENAME_NOEXT = re.compile(
-    r'^(?:.*/)*(.*?)(\.(folia|xml|conllu|conllup|cupt|parsemetsv-pos|parsemetsv|tsv|tar|gz|bz2|zip))*$')
+    r'^(?:.*/)*(.*?)(\.(folia|xml|conllu|conllup|cupt|parsemetsv|tsv|tar|gz|bz2|zip))*$')
 
 def basename_without_ext(filepath):
     r"""Return the basename of `filepath` without any known extensions."""
