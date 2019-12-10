@@ -988,7 +988,7 @@ class IterAlignedFiles:
 
 
 def _iter_parseme_file(lang, file_path, default_mwe_category):
-    fileobj = open(file_path, 'r') if file_path != "-" else sys.stdin
+    fileobj = open(file_path, 'r', encoding="utf-8") if file_path != "-" else sys.stdin
     corpusinfo = CorpusInfo(lang, file_path, None)
     header = fileobj.buffer.peek(4096)
 
@@ -1065,7 +1065,7 @@ class AlignedIterator:
         chain_iter = itertools.chain.from_iterable
         main_iterators = [_iter_parseme_file(lang, p, default_mwe_category) for p in main_paths]
         conllu_iterators = None if not conllu_paths else \
-            [ConlluIterator(CorpusInfo(lang, p, None), open(p, 'r'), default_mwe_category) for p in conllu_paths]
+            [ConlluIterator(CorpusInfo(lang, p, None), open(p, 'r', encoding="utf-8"), default_mwe_category) for p in conllu_paths]
         return AlignedIterator(main_iterators, conllu_iterators, debug)
 
 

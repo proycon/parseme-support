@@ -75,7 +75,7 @@ class Main:
     def run(self, lang_set_file=CATEG_SET_URL, outfile=sys.stdout):
         self.conllu_paths = None #self.args.conllu or dataalign.calculate_conllu_paths(self.args.input)
         doc_id = dataalign.basename_without_ext(self.args.input[0])
-        doc = folia.Document(id=doc_id if doc_id.isalpha() else "_")
+        doc = folia.Document(id=doc_id) # if doc_id.isalpha() else "_")
         main_text = doc.add(folia.Text)
         if self.args.lang in dataalign.LANGS_WRITTEN_RTL:
             doc.metadata['direction'] = 'rtl'
