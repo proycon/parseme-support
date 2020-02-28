@@ -35,13 +35,11 @@ import sys
 #from categories import Categories # USE THIS LINE WHEN TESTING LOCALLY but do not forget to comment this line out when committing
 from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
 
-
 try:
     from folia import main as folia
 #    from pylpl.formats import folia 
 except ImportError:
     exit("ERROR: FoliaPY not found, please run this code: pip3 install folia")
-
 
 # The `empty` field in CoNLL-U and PARSEME-TSV
 EMPTY = "_"
@@ -67,7 +65,7 @@ LANGS_WITH_CANONICAL_VERB_ON_RIGHT = set("DE EU HI TR".split())
 LANGS_WITH_VERB_OCCURRENCES_ON_RIGHT = LANGS_WITH_CANONICAL_VERB_ON_RIGHT - set(["DE"])
 
 # Languages that are written right-to-left (FLAT needs to know this for proper displaying)
-LANGS_WRITTEN_RTL = set(["AR FA HE YI"])
+LANGS_WRITTEN_RTL = set("AR FA HE YI".split())
 
 
 ############################################################
