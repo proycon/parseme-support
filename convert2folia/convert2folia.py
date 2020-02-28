@@ -98,9 +98,9 @@ class Main:
                 foreign = ElementTree.Element('foreign-data')
                 foreign.append(ElementTree.Element('conllup-columns', columns=conllup_text))
                 folia_w.add(folia.ForeignData, node=foreign)               
-                if tsv_w.get("XPOS",dataalign.EMPTY) != dataalign.EMPTY and \
-                   tsv_w["XPOS"].startswith("V") :
-                    folia_w.append(folia.PosAnnotation(doc, cls=tsv_w["XPOS"], 
+                if tsv_w.get("UPOS",dataalign.EMPTY) != dataalign.EMPTY and \
+                   tsv_w["UPOS"] == "VERB" :
+                    folia_w.append(folia.PosAnnotation(doc, cls="V", 
                                    annotator="auto", 
                                    annotatortype=folia.AnnotatorType.AUTO))
 
