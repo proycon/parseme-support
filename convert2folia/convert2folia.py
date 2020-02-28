@@ -25,6 +25,8 @@ parser.add_argument("--lang", choices=sorted(dataalign.LANGS), metavar="LANG", r
         help="""Name of the target language (e.g. EN, FR, PL, DE...)""")
 #parser.add_argument("--conllu", type=str, nargs="+",
 #        help="""Path to parallel input CoNLL files""")
+parser.add_argument("--rtl", action="store_true", 
+        help="""Language written in right-to-left script""")
 parser.add_argument("--stdout", action="store_true", 
         help="""Output data in stdout""")
 
@@ -77,7 +79,7 @@ class Main:
         doc_id = dataalign.basename_without_ext(self.args.input[0])
         doc = folia.Document(id=doc_id) # if doc_id.isalpha() else "_")
         main_text = doc.add(folia.Text)
-        if self.args.lang in dataalign.LANGS_WRITTEN_RTL:
+        if self.args.rtl : #or self.args.lang in dataalign.LANGS_WRITTEN_RTL:
             doc.metadata['direction'] = 'rtl'
         doc.metadata['status'] = 'untouched'
         doc.declare(folia.Entity, set=lang_set_file)
@@ -92,7 +94,6 @@ class Main:
             folia_sentence = main_text.add(folia.Sentence)
             for tsv_w in tsv_sentence.tokens:                
                 folia_w = folia_sentence.add(folia.Word, text=tsv_w["FORM"], space=(not tsv_w.nsp))
-
                 # Note we swap "\t" and XML_CONLLUP_SEP, for easier human inspection of <conllup-fields>
                 conllup_text = XML_CONLLUP_SEP.join(tsv_w.get(col, "_").replace(XML_CONLLUP_SEP, "\t") for col in colnames)
                 foreign = ElementTree.Element('foreign-data')
@@ -126,15 +127,12 @@ class Main:
 
 #This function can be called directly by FLAT
 def flat_convert(filename, targetfilename, *args, **kwargs):
+    args = ['--input',filename,'--lang', "EN"]
     if 'rtl' in kwargs and kwargs['rtl']:
-        #rtl=True
-        lang = "EN" #any non-RTL language
-    else:
-        lang = "HE" # any RTL language
+        args.append("--rtl")
     setdefinition = kwargs['flatconfiguration']['annotationfocusset']
     try:
-        Main(parser.parse_args(['--input',filename,'--lang', lang])).run(lang_set_file=setdefinition,outfile=targetfilename)
-        #convert(filename, targetfilename, rtl, setdefinition)
+        Main(parser.parse_args(args)).run(lang_set_file=setdefinition,outfile=targetfilename)
     except Exception as e:
         return False, e.__class__.__name__ + ': ' + str(e) 
     return True
