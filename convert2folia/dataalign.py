@@ -36,8 +36,8 @@ import sys
 from convert2folia.categories import Categories # USE THIS LINE ON FLAT SERVER but comment it out when testing locally
 
 try:
-    from folia import main as folia
-#    from pylpl.formats import folia 
+    from folia import main as folia # Python3.5 and later only
+    #from pynlpl.formats import folia
 except ImportError:
     exit("ERROR: FoliaPY not found, please run this code: pip3 install folia")
 
@@ -53,7 +53,7 @@ LANGS_WITH_ALL_CANONICAL_TOKENS_LEMATIZED = set("HI HU".split())
 ############################################################
 
 # Set of all valid languages in the latest PARSEME Shared-Task
-LANGS = set("AR BG CS DE EL EN ES EU FA FR HE HR HU HI IT LT MT PL PT RO SL SV TR".split())
+LANGS = set("AR BG CS DE EL EN ES EU FA FR GA HE HR HU HI IT LT MT PL PT RO SL SV TR ZH".split())
 
 # Languages where the pronoun in IRV is canonically on the left
 LANGS_WITH_CANONICAL_REFL_PRON_ON_LEFT = set("DE EU FR RO".split())
@@ -533,6 +533,15 @@ class Sentence:
         r"""Calculate required `sent_id` attribute for CoNLL-UP."""
         return KVPair(sent_id_key, 'autogen--{}--{}'.format(
             os.path.basename(self.corpusinfo.file_path), self.nth_sent))
+            
+    def get_kvpair(self, key: str, backoff: object) -> KVPair:
+        r"""Return a KVPair for given `key`.
+        If the key is not unique or absent, returns `backoff`.
+        """
+        ret = [kv for kv in self.kv_pairs if kv.key == key]
+        if len(ret) != 1:
+            return backoff
+        return ret[0]
 
 
 class MWEOccur:
