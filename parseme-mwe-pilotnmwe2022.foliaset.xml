@@ -8,6 +8,7 @@
     <class xml:id="PrepMWE" label="PrepMWE"/> 
     <class xml:id="CoordMWE" label="CoordMWE"/>     
     <class xml:id="PronMWE" label="PronMWE"/>
+    <class xml:id="IntjMWE" label="IntjMWE"/>
     <class xml:id="LVC.full" label="LVC.full"/>
     <class xml:id="LVC.cause" label="LVC.cause"/>    
     <class xml:id="VID" label="VID"/>
