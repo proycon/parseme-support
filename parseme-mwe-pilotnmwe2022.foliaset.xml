@@ -8,6 +8,14 @@
     <class xml:id="PrepMWE" label="PrepMWE"/> 
     <class xml:id="CoordMWE" label="CoordMWE"/>     
     <class xml:id="PronMWE" label="PronMWE"/>
+    <class xml:id="LVC.full" label="LVC.full"/>
+    <class xml:id="LVC.cause" label="LVC.cause"/>    
+    <class xml:id="VID" label="VID"/>
+    <class xml:id="IRV" label="IRV"/>
+    <class xml:id="VPC.full" label="VPC.full"/> 
+    <class xml:id="VPC.semi" label="VPC.semi"/>     
+    <class xml:id="MVC" label="MVC"/>
+    <class xml:id="IAV" label="{optional} IAV"/>    
     <class xml:id="NotMWE" label="{optional} NotVMWE"/>
     <class xml:id="TODO" label="{change-me} TODO"/>    
 </set>
