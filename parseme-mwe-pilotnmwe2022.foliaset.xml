@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <set xml:id="parseme-mwe-pilotnmwe2022-1.0" type="closed" xmlns="http://ilk.uvt.nl/folia">
     <!-- This set is for all languages' pilot for nominal mwes -->
-    <class xml:id="PropN" label="PropN"/>
+    <class xml:id="PropName" label="PropName"/>
     <class xml:id="NounMWE" label="NounMWE"/>    
     <class xml:id="AdjMWE" label="AdjMWE"/>
     <class xml:id="AdvMWE" label="AdvMWE"/>
