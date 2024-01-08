@@ -288,7 +288,7 @@ class MWEAnnotMetadata(Metadata):
 
 ############################################################
 
-class Token(collections.Mapping):
+class Token(collections.abc.Mapping):
     r"""Represents a token in an input file.
 
     Instances behave like a frozen dict, so you can do
