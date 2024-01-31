@@ -17,5 +17,6 @@
     <class xml:id="VPC.semi" label="VPC.semi"/>     
     <class xml:id="MVC" label="MVC"/>    
     <class xml:id="IAV" label="{optional} IAV"/>    
-    <class xml:id="NotMWE" label="{optional} NotVMWE"/>    
+    <class xml:id="NotMWE" label="{optional} NotVMWE"/>
+    <class xml:id="TODO" label="{change-me} TODO"/>
 </set>
