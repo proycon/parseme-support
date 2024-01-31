@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xml:id="parseme-mwe-pilot-unidive-2024" type="closed" xmlns="http://ilk.uvt.nl/folia">
+    <!-- This set is for all languages' pilot for nominal mwes -->    
+    <class xml:id="PronID" label="PronID"/>
+    <class xml:id="NID" label="NID"/>
+    <class xml:id="VMWENom" label="VMWENom"/>
+    <class xml:id="AdjID" label="AdjID"/>
+    <class xml:id="AdvID" label="AdvID"/>    
+    <class xml:id="FMWE" label="FMWE"/>     
+    <class xml:id="OTHER" label="{to be discussed} OTHER"/>    
+    <class xml:id="LS.ICV" label="LS.ICV"/>    
+    <class xml:id="LVC.full" label="LVC.full"/>
+    <class xml:id="LVC.cause" label="LVC.cause"/>    
+    <class xml:id="VID" label="VID"/>
+    <class xml:id="IRV" label="IRV"/>
+    <class xml:id="VPC.full" label="VPC.full"/> 
+    <class xml:id="VPC.semi" label="VPC.semi"/>     
+    <class xml:id="MVC" label="MVC"/>    
+    <class xml:id="IAV" label="{optional} IAV"/>    
+    <class xml:id="NotMWE" label="{optional} NotVMWE"/>    
+</set>
