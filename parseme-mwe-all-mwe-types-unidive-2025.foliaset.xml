@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xml:id="parseme-mwe-all-mwe-types-unidive-2025" type="closed" xmlns="http://ilk.uvt.nl/folia">
+    <!-- This set is for all syntactic types of MWEs in all languages, for the MWE annotation campaign in UniDive task 1.2 -->    
+    <class xml:id="AdjID" label="adjadv: AdjID"/>
+    <class xml:id="AdvID" label="adjadv: AdvID"/>    
+    <class xml:id="DetID" label="functional: DetID"/>     
+    <class xml:id="AdpID" label="functional: AdpID"/>     
+    <class xml:id="ConjID" label="functional: ConjID"/>     
+    <class xml:id="IntjID" label="functional: IntjID"/>     
+    <class xml:id="PronID" label="nominal: PronID"/>
+    <class xml:id="NID" label="nominal: NID"/>
+    <class xml:id="LVC.full" label="verbal: LVC.full"/>
+    <class xml:id="LVC.cause" label="verbal: LVC.cause"/>    
+    <class xml:id="VID" label="verbal: VID"/>
+    <class xml:id="IRV" label="verbal: IRV"/>
+    <class xml:id="VPC.full" label="verbal: VPC.full"/> 
+    <class xml:id="VPC.semi" label="verbal: VPC.semi"/>     
+    <class xml:id="MVC" label="verbal: MVC"/>    
+    <class xml:id="LS.ICV" label="{italian} LS.ICV"/>    
+    <class xml:id="IAV" label="{optional} IAV"/>    
+    <class xml:id="AV.LVC.full" label="{deverbal adjadv}: AV.LVC.full"/>
+    <class xml:id="AV.LVC.cause" label="{deverbal adjadv}: AV.LVC.cause"/>
+    <class xml:id="AV.VID" label="{deverbal adjadv}: AV.VID"/>
+    <class xml:id="AV.IRV" label="{deverbal adjadv}: AV.IRV"/>
+    <class xml:id="AV.IVPC.full" label="{deverbal adjadv}: AV.IVPC.full"/>
+    <class xml:id="AV.IVPC.semi" label="{deverbal adjadv}: AV.IVPC.semi"/>
+    <class xml:id="AV.MVC" label="{deverbal adjadv}: AV.MVC"/>
+    <class xml:id="AV.IAV" label="{deverbal adjadv}: AV.IAV"/>
+    <class xml:id="NV.LVC.full" label="{deverbal nominal}: NV.LVC.full"/>
+    <class xml:id="NV.LVC.cause" label="{deverbal nominal}: NV.LVC.cause"/>
+    <class xml:id="NV.VID" label="{deverbal nominal}: NV.VID"/>
+    <class xml:id="NV.IRV" label="{deverbal nominal}: NV.IRV"/>
+    <class xml:id="NV.IVPC.full" label="{deverbal nominal}: NV.IVPC.full"/>
+    <class xml:id="NV.IVPC.semi" label="{deverbal nominal}: NV.IVPC.semi"/>
+    <class xml:id="NV.MVC" label="{deverbal nominal}: NV.MVC"/>
+    <class xml:id="NV.IAV" label="{deverbal nominal}: NV.IAV"/>
+    <class xml:id="NotMWE" label="{optional} NotVMWE"/>
+    <class xml:id="TODO" label="{change-me} TODO"/>
+    <class xml:id="OTHER" label="{to be discussed} OTHER"/> </set>
+
