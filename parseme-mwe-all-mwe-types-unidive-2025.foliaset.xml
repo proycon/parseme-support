@@ -34,7 +34,7 @@
     <class xml:id="NV.IVPC.semi" label="{deverbal nominal}: NV.IVPC.semi"/>
     <class xml:id="NV.MVC" label="{deverbal nominal}: NV.MVC"/>
     <class xml:id="NV.IAV" label="{deverbal nominal}: NV.IAV"/>
-    <class xml:id="NotMWE" label="{optional} NotVMWE"/>
+    <class xml:id="NotMWE" label="{optional} NotMWE"/>
     <class xml:id="TODO" label="{change-me} TODO"/>
     <class xml:id="OTHER" label="{to be discussed} OTHER"/> </set>
 
